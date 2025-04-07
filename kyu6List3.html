@@ -1,0 +1,1482 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // let str = 'the_stealth-warrior';
+
+      // function toCamelCase(str) {
+      //   const isFirstUpper = str[0] === str[0].toUpperCase()
+      //   // console.log(isFirstUpper);
+
+      //   let newStr = str.replace(/[-_]/g, ' ')
+      //   // console.log(newStr);
+
+      //   let arr = newStr.split(' ')
+
+      //   let newArr = arr.map((word, index) => {
+      //     if(index === 0) {
+      //       return word
+      //     }else{
+      //       return word[0].toUpperCase() + word.slice(1)
+      //     }
+      //   })
+      //   // console.log(newArr);
+
+      //   let result = newArr.join('')
+
+      //   console.log(isFirstUpper ? result[0].toUpperCase() + result.slice(1) : result);
+
+      // }
+
+      // toCamelCase(str);
+
+      // let arr1 = [1, 3, 5, 7, 9];
+      // let arr2 = [2, 4, 6, 8, 10];
+
+      // let arr3=[...arr1, ...arr2]
+      // console.log(arr3)
+      // let arr4=arr3.sort((a, b) => a - b)
+      // console.log(arr4)
+
+      // let num = 999
+
+      // function multiplication(num) {
+      //   let numStr = num.toString()
+
+      //   let product = 1
+
+      //   for(let i = 0; i < numStr.length; i++) {
+      //     product *= +numStr[i]
+      //   }
+
+      //   console.log(product);
+
+      // }
+
+      // multiplication(num)
+
+      // let num = 999
+      // let num = 39
+      // let num = 4
+
+      // function persistence(num) {
+      //   let count = 0
+      //   while(num >= 10) {
+      //     let numStr = num.toString()
+      //     let product = 1
+
+      //     for(let char of numStr){
+      //       product *= +char
+      //     }
+
+      //     num = product
+
+      //     count++
+      //   }
+
+      //   console.log(num, count);
+
+      // }
+
+      // persistence(num)
+
+      // let n = 277777788888899
+
+      // function per(n) {
+      //   let result = []
+      //   // let count = 0
+
+      //   while(n >= 10) {
+      //     let prod = 1
+      //     const numStr = n.toString()
+
+      //     for(const char of numStr) {
+      //       prod *= +char
+      //     }
+
+      //     n = prod
+
+      //     result.push(n)
+      //     // count++
+      //   }
+
+      //   console.log(result);
+
+      // }
+
+      // per(n)
+
+      // let n = 3
+      // let mxval = 200
+
+      // function countSpecMult(n, mxval) {
+      //   const primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31]
+      //   let prod = primes.slice(0, n).reduce((a, b) => a * b, 1)
+      //   // console.log(prod);
+      //   console.log(~~(mxval/prod));
+      // }
+
+      // countSpecMult(n, mxval)
+
+      // let arr = [1,2,2,3,3,3,4,3,3,3,2,2,1]
+      // let arr = [0,1,0,1,0]
+
+      // function findOdd(arr) {
+      //   let obj = {}
+
+      //   for(let char of arr) {
+      //     obj[char] = (obj[char] || 0) + 1
+      //   }
+
+      //   console.log(obj);
+      //   console.log(Object.values(obj));
+
+      //   for(let key in obj) {
+      //     if(obj[key] % 2) {
+      //       console.log(key);
+
+      //     }
+      //   }
+      // }
+
+      // findOdd(arr)
+
+      // var list = [
+      //   { firstName: 'Aba', lastName: 'N.', country: 'Ghana', continent: 'Africa', age: 21, language: 'Python' },
+      //   { firstName: 'Abb', lastName: 'O.', country: 'Israel', continent: 'Asia', age: 39, language: 'Java' }
+      // ];
+
+      // function findOddNames(list) {
+      //   console.log(list.filter((obj) => {
+      //     const asciiSum = obj.firstName.split('').reduce((acc, curr) => acc + curr.charCodeAt(0), 0)
+      //     // console.log(asciiSum);
+      //     return (asciiSum % 2 !== 0);
+
+      //   }));
+
+      // }
+
+      // findOddNames(list)
+
+      // var list1 = [
+      //   { firstName: 'Gabriel', lastName: 'X.', country: 'Monaco', continent: 'Europe', age: 49, language: 'PHP' },
+      //   { firstName: 'Odval', lastName: 'F.', country: 'Mongolia', continent: 'Asia', age: 38, language: 'Python' },
+      //   { firstName: 'Emilija', lastName: 'S.', country: 'Lithuania', continent: 'Europe', age: 19, language: 'Python' },
+      //   { firstName: 'Sou', lastName: 'B.', country: 'Japan', continent: 'Asia', age: 49, language: 'PHP' },
+      // ];
+
+      // function findSenior(list1) {
+      //   // let newArr = list1.sort((a, b) => b.age - a.age)
+      //   let max = 0
+      //   for(let i = 0; i < list1.length; i++) {
+      //     if(list1[i].age > max) {
+      //       max = list1[i].age
+      //     }
+      //   }
+
+      //   let newArr = list1.filter((obj) => {
+      //     return obj.age === max
+      //   })
+
+      //   console.log(newArr);
+
+      // }
+
+      // findSenior(list1)
+
+      // var list1 = [
+      //   { firstName: 'Noah', lastName: 'M.', country: 'Switzerland', continent: 'Europe', age: 19, language: 'JavaScript' },
+      //   { firstName: 'Maia', lastName: 'S.', country: 'Tahiti', continent: 'Oceania', age: 28, language: 'JavaScript' },
+      //   { firstName: 'Shufen', lastName: 'L.', country: 'Taiwan', continent: 'Asia', age: 35, language: 'HTML' },
+      //   { firstName: 'Sumayah', lastName: 'M.', country: 'Tajikistan', continent: 'Asia', age: 30, language: 'CSS' }
+      // ];
+
+      // function countDevelopers(list1) {
+      //   let num = 0
+      //   list1.map((obj) => {
+
+      //     if(obj.continent === 'Europe') {
+      //       num++
+      //     }
+      //   })
+
+      //   console.log(num);
+
+      // }
+
+      // countDevelopers(list1)
+
+      // var list1 = [
+      //   { firstName: 'Fatima', lastName: 'A.', country: 'Algeria', continent: 'Africa', age: 25, language: 'JavaScript' },
+      //   { firstName: 'Agustín', lastName: 'M.', country: 'Chile', continent: 'Americas', age: 37, language: 'C' },
+      //   { firstName: 'Jing', lastName: 'X.', country: 'China', continent: 'Asia', age: 39, language: 'Ruby' },
+      //   { firstName: 'Laia', lastName: 'P.', country: 'Andorra', continent: 'Europe', age: 55, language: 'Ruby' },
+      //   { firstName: 'Oliver', lastName: 'Q.', country: 'Australia', continent: 'Oceania', age: 65, language: 'PHP' },
+      //   { firstName: 'Fatima', lastName: 'A.', country: 'Algeria', continent: 'Africa', age: 25, language: 'JavaScript' },
+      //   { firstName: 'Agustín', lastName: 'M.', country: 'Chile', continent: 'Americas', age: 37, language: 'C' },
+      //   { firstName: 'Jing', lastName: 'X.', country: 'China', continent: 'Asia', age: 39, language: 'Ruby' },
+      // ];
+
+      // function allContinents(list1) {
+      //   let arr = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania']
+
+      //   let newArr = list1.map((obj) => {
+      //     return obj.continent
+      //   })
+
+      //   arr = arr.map((item) => {
+      //     return newArr.includes(item)
+      //   })
+
+      //   return (arr.every((item) => item === true))
+      // }
+
+      // console.log(allContinents(list1));
+
+      // var list1 = [
+      //   { firstName: 'Harry', lastName: 'K.', country: 'Brazil', continent: 'Americas', age: 19, language: 'Python' },
+      //   { firstName: 'Kseniya', lastName: 'T.', country: 'Belarus', continent: 'Europe', age: 29, language: 'JavaScript' },
+      //   { firstName: 'Jing', lastName: 'X.', country: 'China', continent: 'Asia', age: 39, language: 'Ruby' },
+      //   { firstName: 'Noa', lastName: 'A.', country: 'Israel', continent: 'Asia', age: 40, language: 'Ruby' },
+      //   { firstName: 'Andrei', lastName: 'E.', country: 'Romania', continent: 'Europe', age: 59, language: 'C' },
+      //   { firstName: 'Maria', lastName: 'S.', country: 'Peru', continent: 'Americas', age: 60, language: 'C' },
+      //   { firstName: 'Lukas', lastName: 'X.', country: 'Croatia', continent: 'Europe', age: 75, language: 'Python' },
+      //   { firstName: 'Chloe', lastName: 'K.', country: 'Guernsey', continent: 'Europe', age: 88, language: 'Ruby' },
+      //   { firstName: 'Viktoria', lastName: 'W.', country: 'Bulgaria', continent: 'Europe', age: 98, language: 'PHP' },
+      //   { firstName: 'Piotr', lastName: 'B.', country: 'Poland', continent: 'Europe', age: 128, language: 'JavaScript' }
+      // ];
+
+      // function isAgeDiverse(list1) {
+      //   const ageGroups = {
+      //     teens : false,
+      //     twenties : false,
+      //     thirties : false,
+      //     forties : false,
+      //     fifties : false,
+      //     sixties : false,
+      //     seventies : false,
+      //     eighties : false,
+      //     ninties : false,
+      //     centenarians : false
+      //   }
+
+      //   list1.forEach((obj) => {
+      //     let age = obj.age
+      //     if(age >= 13 && age < 20){
+      //        ageGroups.teens = true
+      //     }else if(age >= 20 && age <= 29){
+      //        ageGroups.twenties = true
+      //     }else if(age >= 30 && age <= 39){
+      //        ageGroups.thirties = true
+      //     }else if(age >= 40 && age <= 49){
+      //        ageGroups.forties = true
+      //     }else if(age >= 50 && age <= 59){
+      //        ageGroups.fifties = true
+      //     }else if(age >= 60 && age <= 69){
+      //        ageGroups.sixties = true
+      //     }else if(age >= 70 && age <= 79){
+      //        ageGroups.seventies = true
+      //     }else if(age >= 80 && age <= 89){
+      //        ageGroups.eighties = true
+      //     }else if(age >= 90 && age <= 99){
+      //        ageGroups.ninties = true
+      //     }else if(age >= 100){
+      //        ageGroups.centenarians = true
+      //     }
+      //   })
+
+      //   console.log(Object.values(ageGroups).every((group) => group === true));
+
+      // }
+
+      // isAgeDiverse(list1)
+
+      // var list1 = [
+      //    { firstName: 'Emily', lastName: 'N.', country: 'Ireland', continent: 'Europe', age: 30, language: 'Ruby' },
+      //    { firstName: 'Nor', lastName: 'E.', country: 'Malaysia', continent: 'Asia', age: 20, language: 'Clojure' }
+      // ];
+
+      // function addUsername(list1) {
+      //    list1.map((obj) => {
+      //       let date = new Date().getFullYear()
+      //       return obj.userName = obj.firstName + obj.lastName[0].toLowerCase() + parseInt(date - obj.age)
+      //    })
+
+      //    console.log(list1);
+
+      // }
+
+      // console.log(addUsername(list1));
+
+      // let date = new Date().getFullYear()
+      // console.log(date - 30);
+
+      // var list = [
+      //    { firstName: 'Daniel', lastName: 'J.', country: 'Aruba', continent: 'Americas', age: 42, language: 'Python' },
+      //    { firstName: 'Kseniya', lastName: 'T.', country: 'Belarus', continent: 'Europe', age: 22, language: 'Ruby' },
+      //    { firstName: 'Sou', lastName: 'B.', country: 'Japan', continent: 'Asia', age: 43, language: 'Ruby' },
+      //    { firstName: 'Hanna', lastName: 'L.', country: 'Hungary', continent: 'Europe', age: 95, language: 'JavaScript' },
+      //    { firstName: 'Jayden', lastName: 'P.', country: 'Jamaica', continent: 'Americas', age: 18, language: 'JavaScript' },
+      //    { firstName: 'Joao', lastName: 'D.', country: 'Portugal', continent: 'Europe', age: 25, language: 'JavaScript' }
+      // ];
+
+      //     function isLanguageDiverse(list) {
+      //       list = list.map((obj) => {
+      //         return obj.language;
+      //       });
+
+      //       let newList = list.reduce((acc, curr) => {
+      //         acc[curr] = (acc[curr] || 0) + 1;
+      //         return acc;
+      //       }, {});
+
+      //       let numbers = Object.values(newList);
+      //       // console.log(
+      //       //   !numbers.some((num1) =>
+      //       //     numbers.some((num2) => num1 !== num2 && num1 === num2 * 3),
+      //       //   ),
+      //       // );
+
+      //       const maxCount = Math.max(...numbers);
+      //       const minCount = Math.min(...numbers);
+
+      //       console.log(numbers);
+
+      //       console.log(maxCount, minCount);
+
+      // // Return true if the maximum count is at most 2 times the minimum count
+      //       console.log(maxCount <= minCount * 2);
+
+      //       // for(let i = 0; i < numbers.length; i++) {
+      //       //   for(let j = 0; j < numbers.length; j++) {
+      //       //     if(i !== j && numbers[i] >= numbers[j] * 3){
+      //       //       console.log(false);
+
+      //       //     }
+      //       //   }
+      //       // }
+      //     }
+
+      //     isLanguageDiverse(list);
+
+      // console.log(13 > Math.pow(2, 3));
+
+      // let dups = [23, 45, 65, 78, 99, 23, 99]
+
+      // function duplicates(dups) {
+      //   // for(let i = 0; i < dups.length; i++) {
+      //   //   for(let j = 0; j < dups.length; j++) {
+      //   //     if(i !== j && dups[i] === dups[j]) {
+      //   //       console.log(dups[j]);
+
+      //   //     }
+      //   //   }
+      //   // }
+
+      //   let set = new Set(dups)
+      //   console.log(set);
+
+      // }
+
+      // duplicates(dups)
+
+      // var list = [
+      //   { firstName: null, lastName: 'I.', country: 'Argentina', continent: 'Americas', age: 35, language: 'Java' },
+      //   { firstName: 'Lukas', lastName: 'X.', country: 'Croatia', continent: 'Europe', age: 35, language: null },
+      //   { firstName: 'Madison', lastName: 'U.', country: 'United States', continent: 'Americas', age: 32, language: 'Ruby' }
+      // ];
+
+      // function askForMissingDetails(list) {
+
+      //   let filtered = list.filter((obj) => {
+      //     for(let keys in obj) {
+      //       if(obj[keys] === null) {
+      //         return obj
+      //       }
+      //     }
+      //   })
+
+      //   let arr = filtered.map((obj) => {
+      //     let key = Object.keys(obj)
+      //     let value = Object.values(obj)
+
+      //     for(let keys in obj) {
+      //       if(obj[keys] === null){
+      //         obj.question = `Hi, could you please provide your ${keys}`
+      //       }
+      //     }
+
+      //     return obj
+      //   })
+
+      //   console.log(arr);
+
+      // }
+
+      // askForMissingDetails(list)
+
+      // let arr = [1,2,2,3,3,3,4,3,3,3,2,2,1]
+
+      // function findOdd(arr) {
+      //   let obj = {}
+      //   let odd = []
+
+      //   for(let num of arr) {
+      //     obj[num] = (obj[num] || 0) + 1
+      //   }
+
+      //   for(let key in obj) {
+      //     if(obj[key] % 2) {
+      //       odd.push(key)
+      //     }
+      //   }
+
+      //   console.log(+odd);
+      // }
+
+      // findOdd(arr)
+
+      // function solution(number){
+      //   let sum = 0
+
+      //   for(let i = 1; i < number; i++) {
+      //     if(i % 3 === 0 || i % 5 === 0) {
+      //       sum += i
+      //     }
+      //   }
+
+      //   console.log(sum);
+
+      // }
+
+      // solution(10)
+
+      // multiplicationTable = function(size) {
+      //   let arr = []
+
+      //   for(let i = 1; i <= size; i++) {
+      //     let newArr = []
+      //     for(let j = 1; j <= size; j++) {
+      //       newArr.push(i * j)
+      //     }
+      //     arr.push(newArr)
+
+      //   }
+      //   console.log(arr);
+
+      // }
+
+      // multiplicationTable(3)
+
+      // decodeMorse = function(morseCode){
+      //   return morseCode.trim().split('   ').map((word) => {
+      //     return word.split(' ').map((letter) => {
+      //       return MORSE_CODE[letter]
+      //     }).join('')
+      //   }).join(' ')
+      //   // You can use MORSE_CODE[morse]
+      // }
+
+      //Barcode basically morse-code ko vertically extend kiya gaya hai --- BARCODE k 12 digit 1 trillion(10 to power 12) deti hain
+      //(BARCODE COMPLETE HAI YA NAI USS K LIYE BARCODE K RIGHT SIDE PE LAST NUMBER USE HOTA HAI --- BARCODE MEIN 12 LINES HOTI HAIN 6 LEFT
+      //PE 6 RIGHT PE, EACH LINE REPRESENT KRTI HAI AIK NUMBER KO --- AGAR BARCODE SCRATCHED HO JYE TOU FOLLOWING WAY SY PTA CHALTA HAI K
+      // YE COMPLETE HAI YA NAI : RIGHT-LAST NUMBER KO CHORH K SB NUMBERS JO ODD POSITION PE HAIN UNHEIN ADD KARO 0+0+3+5+5+3 = 16 ISS
+      //RESULT KO 3 SY MULTIPLY KARO 16*3 = 48 AUR ISS RESULT MEIN EVEN NUMBERS KO ADD KARO 48+(4+2+2+5+0) = 61 ABB IS RESULT KA REMAINDER
+      //OR MODULUS OPERAOR OF 10 LENA HAI 61/10 = 1 --- AGAR REMAINDER 0 AATA HAI TOU RIGHTLAST DIGIT 0 HAI WARNA 10 - REMAINDER
+      //RIGHTLAST DIGIT HO GA --- AGAR BARCODE KA KOI AIK DIGIT DAMAGED HAI TOU YE LASTRIGHT NUMBER LY K BACK CALCULATION SY PTA CHAL
+      //JYE GA MISSING NUMBER --- PR AGAR TWO YA ZYADA NUMBER NAI HAIN TOU BARCODE K NEECHAY NUMBERS KO WRITE KRNA PARHY GA --- RIGHTLAST
+      //DIGIT K BEGHAIR POSSIBILITIES 100 BILLION HAIN (10 TO POWER 11) AAJ TK 1.24 BILLION PRODUCT BANAY HAIN)
+
+      //BARCODE K ALTERNATIVE KI WJHA AMOUNT OF INFORMATION HAI, BARCODE MEIN BHT KAM AMOUNT OF INFO SAVE HOTI HAI JB QR CODE MEIN KAFI
+      //INFO STORE KI JA SAKTI HAI
+      //BARCODE-49 (BOOK SHELF KI TARHA HOTA HAI) BARCODE-PDF-417(AIRLINE BOARDING PASS PE HOTAY HAIN)
+
+      //aik website ka qr code banana ho tou uss website k address ko sb sy pehle bits (1s and 0s) mein convert kry gy jo k byte encoding
+      //hoti hai --- byte encoding ASCII value use krta hai jahan hr alphabet ko aik number assigned hota hai (1 t0 256) --- phr ASCII
+      //decimal ko uss k binary-form mein (1s and 0s) mein convert krty hain --- since 256 = 2 to power 8 tou ye 8 bit binary banay ga
+      //e.g 00010101 --- ye 8 bits aik byte of information hota hai --- example: w -- 119 -- 01110111 (ye pura 01110111 binary form w hai
+      //aur ye 8 bits  ka bana hoa hai --- as a whole ye 8 bit binary combination kehlata hai)  www.youtube.com/veritasium 26 characters long
+      // hai tou iss mein 26 byte of information ho gi
+      //qr code k different versions hota hain 21* 21(version 1), 25 * 25 (version 2), 177 * 177(version 40) --- length * width of qr code
+
+      // function scanner(qrcode){
+      //   let mask = (x, y) => (x + y) % 2 === 0
+      //   let dataBits = []
+
+      //   for(let y = 20; y >= 0; y--) {
+      //     if(y === 6) continue
+
+      //     for(let x = 20; x >= 0; x-=2) {
+      //       if(x === 6) x--
+
+      //       for(let dx = 0; dx < 2; dx++) {
+      //         let actualX = x - dx
+      //         let bit = qrcode[y][actualX]
+
+      //         if(mask(actualX, y)) {
+      //           bit = bit === 1 ? 0 : 1
+      //         }
+
+      //         dataBits.push(bit)
+      //       }
+      //     }
+      //   }
+
+      //   let bytes = []
+
+      //   for(let i = 0; i < dataBits.length; i++) {
+      //     let byte = parseInt(dataBits.slice(i, i + 8).join(''), 2)
+      //     bytes.push(byte)
+      //   }
+
+      //   let message = bytes.map((b) => String.fromCharCode(b)).join('')
+
+      //   console.log(message.trim());
+
+      // }
+
+      // scanner(qrcode)
+
+      // let num = 15556
+      // let num2 = 12
+
+      // console.log(num.toString(2)); // ----- 11110011000100
+      // console.log(num2.toString(2).padStart(8, 0)); // --- '00001100'
+
+      // let bits = '00001100'
+      // let bits2 = '11110011000100'
+
+      // console.log(parseInt(bits, 2)); // ----- 12
+      // console.log(parseInt(bits2, 2)); // ----- 15556
+
+      // function* countUpTo(n) {
+      //   for(let i = 0; i < n; i++) {
+      //     yield i
+      //   }
+      // }
+
+      // const counter = countUpTo(9)
+      // console.log(counter.next().value);
+      // console.log(counter.next().value);
+      // console.log(counter.next().value);
+      // console.log(counter.next().value);
+      // console.log(counter.next().value);
+      // console.log(counter.next().value);
+      // console.log(counter.next().value);
+      // console.log(counter.next().value);
+      // console.log(counter.next().value);
+      // console.log(counter.next().value);
+      // console.log(counter.next().value);
+
+      //ye generator function zig-zag pattern generate karay ga
+      // function* patternGen() {
+      //   let x = 20
+      //   let y = 20
+      //   let dx = -1
+
+      //   while(y > 13) {
+      //     for(let dy = 0; dy < 2; dy++) {
+      //       yield [x, y - dy]
+      //     }
+
+      //     x += dx
+
+      //     if(x === 8 || x > 20) {
+      //       dx *= -1; y -= 2; x = x === 8 ? 9 : 20
+      //     }
+      //   }
+      // }
+
+      // //ye function decoded message btaye ga
+      // function scanner(qrc) {
+      //   let bits = []
+      //   for(let [x, y] of patternGen()) {
+      //     //bits array mein opposite bits push hn gy, agar 1 hai tou 0, aur 0 hai tou 1
+      //     bits.push(arc[x][y] ^ (x + y) % 2 === 0)
+      //   }
+      //   //bits ko join kr k aik continuous length aa jye gi
+      //   bits = bits.join('')
+
+      //   //abb size nikalon ga message ka, pehle 4 bits bataty hain k information ks format mein stored hai --- numeric, alphanumeric, binary
+      //   //or kanji --- next 8 bits total length of complete message hoti hai, e.g www.youtube.com/veritasium ki total length 26 hai 26 ko
+      //   //8 bit-binary mein convert krty hai jo size hota hai
+      //   let size = parseInt(bits.slice(4, 12), 2)
+      // }
+
+      // const qrc = [
+      //   [ 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1 ],
+      //   [ 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1 ],
+      //   [ 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1 ],
+      //   [ 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1 ],
+      //   [ 1, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1 ],
+      //   [ 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1 ],
+      //   [ 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1 ],
+      //   [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
+      //   [ 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 1 ],
+      //   [ 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1 ],
+      //   [ 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 1, 1 ],
+      //   [ 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0 ],
+      //   [ 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0 ],
+      //   [ 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0 ],
+      //   [ 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1 ],
+      //   [ 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0 ],
+      //   [ 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1 ],
+      //   [ 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0 ],
+      //   [ 1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1 ],
+      //   [ 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0 ],
+      //   [ 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 1, 1 ]
+      // ];
+
+      // function* patternGen () {
+      //   let x = 20
+      //   let y = 20
+      //   let dx = -1
+
+      //   while(y > 13) {
+      //     for(let dy = 0; dy < 2; dy++) {
+      //       yield [x, y - dy]
+      //     };
+      //     x += dx;
+      //     if( x === 8 || x > 20 ) {
+      //       dx *= -1;
+      //       y -= 2;
+      //       x = x === 8 ? 9 : 20
+      //     }
+      //   }
+      // }
+
+      // function scanner(qrc) {
+      //   let bits = []
+
+      //   for(let [x, y] of patternGen()) {
+      //     bits.push(qrc[x][y] ^ (x + y) % 2 === 0)
+      //   }
+      //   bits = bits.join('')
+
+      //   let size = parseInt(bits.slice(4, 12), 2)
+      //   let result = ''
+
+      //   for(let i = 0; i < size; i++) {
+      //     let byte = bits.slice(12 + i * 8, 12 + (i + 1) * 8)
+      //     let charCode = parseInt(byte, 2)
+      //     result += String.fromCharCode(charCode)
+      //   }
+
+      //   console.log(result);
+      // }
+
+      // scanner(qrc)
+
+      // function happyCoding(nickname){
+      //   let obj = {
+      //     'Happy coding' : 'The programmer was happy, so he coding.',
+      //     "coding happy" : 'When programmer coding, he is happy.',
+      //     "coding everyday" : 'Programmer is coding, but he is not happy.',
+      //     "happy programmer" : 'Programmer has no job of coding, he is happy.',
+      //     "unhappy codewarrior" : 'no coding and no happy'
+      //   }
+
+      //   let arr = nickname.toLowerCase().split(' ')
+      //   if(arr.includes('happy') && arr.includes('coding')){
+      //     if(arr.indexOf('happy') < arr.indexOf('coding')) {
+      //       return 1
+      //     }else{
+      //       return 2
+      //     }
+      //   }else if(arr.includes('coding')) {
+      //     return 3
+      //   }else if(arr.includes('happy')) {
+      //     return 4
+      //   }else{
+      //     return 5
+      //   }
+
+      // }
+
+      // happyCoding('Happy coding')
+
+      // function findEvenIndex(arr)
+      // {
+
+      //  let total = arr.reduce((acc, curr) => acc + curr, 0)
+      //  let leftSum = 0
+
+      //  for(let i = 0; i < arr.length; i++) {
+      //   let rightSum = total - leftSum - arr[i]
+
+      //   if(leftSum === rightSum) {console.log(i)}
+
+      //   leftSum += arr[i]
+      //  }
+
+      //  return -1
+
+      //   let rite = arr.reduce((acc, curr) => acc + curr, 0)
+      //   let left = 0
+
+      //   for(let i = 0; i < arr.length; i++) {
+      //     let num = arr[i]
+
+      //     rite -= num
+
+      //     if(left === rite) {
+      //       console.log(i);
+      //     }
+
+      //     left += num
+      //   }
+
+      //   console.log(-1);
+      // }
+
+      // findEvenIndex([1,2,3,4,3,2,1])
+      // findEvenIndex([1,100,50,-51,1,1])
+      // findEvenIndex([20,10,-80,10,10,15,35])
+
+      // function findOutlier(int){
+      //   let oddCount = int.slice(0, 3).filter((num) => num % 2 !== 0).length
+      //   let mostlyOdd = oddCount >= 2
+
+      //   console.log(int.find((num) => mostlyOdd ? num % 2 === 0 : num % 2 !== 0));
+
+      // }
+
+      // findOutlier([2, 4, 0, 100, 4, 11, 2602, 36])
+      // findOutlier([160, 3, 1719, 19, 11, 13, -21])
+
+      // function mineLocation(field3){
+      //   const arr = []
+
+      //   field3.map((ele, idx) => {
+      //     ele.forEach((item, index) => {
+      //       if(item === 1) {
+      //         arr.push(idx, index)
+      //       }
+
+      //     })
+
+      //   })
+
+      //   console.log(arr);
+
+      // }
+
+      // let field1 = [
+      //   [1, 0, 0],
+      //   [0, 0, 0],
+      //   [0, 0, 0]
+      // ]
+
+      // let field2 = [
+      //   [0, 0, 0],
+      //   [0, 1, 0],
+      //   [0, 0, 0]
+      // ]
+
+      // let field3 = [
+      //   [0, 0, 0],
+      //   [0, 0, 0],
+      //   [0, 1, 0]
+      // ]
+
+      // mineLocation(field3)
+
+      // function middle_point(x1, y1, z1, x2, y2, z2, x3, y3, z3)
+      // {
+      //   let d12 = Math.sqrt(((x2 - x1)*(x2 - x1)) + ((y2 - y1)*(y2 - y1)) + ((z2 - z1)*(z2 - z1)))
+      //   let d13 = Math.sqrt(((x3 - x1)*(x3 - x1)) + ((y3 - y1)*(y3 - y1)) + ((z3 - z1)*(z3 - z1)))
+      //   let d23 = Math.sqrt(((x3 - x2)*(x3 - x2)) + ((y3 - y2)*(y3 - y2)) + ((z3 - z2)*(z3 - z2)))
+
+      //   if(d12 + d13 === d23) {
+      //     // return 1
+      //     console.log(1);
+      //   }else if(d12 + d23 === d13) {
+      //     // return 2
+      //     console.log(2);
+      //   }else if(d13 + d23 === d12) {
+      //     // return 3
+      //     console.log(3);
+      //   }
+      // }
+
+      // // middle_point(1,2,3, 4,5,6, 7,8,9)
+      // // middle_point(0,2,0, 6,-2,8, 3,0,4)
+      // // middle_point(0.25, 0.50, 0.75,  3.25, -0.50, -0.25,  1.00, 0.25, 0.50)
+      // // middle_point(1,0,4, 5,0,6, -7,0,0)
+      // middle_point(-1,0,2, -2,4,-1, -3,8,-4)
+
+      // function digPow(n, p){
+      //   let sum = 0
+      //   let num = n.toString().split('')
+
+      //   // console.log(num);
+
+      //   for(let i = 0; i < num.length; i++) {
+      //     sum += Math.pow(+num[i], p)
+      //     p++
+      //   }
+
+      //   let numbers = num.join('')
+      //   numbers = +numbers
+      //   if(sum % numbers === 0) {
+      //     console.log(sum / numbers);
+      //   }else{
+      //     console.log(-1);
+      //   }
+
+      // }
+
+      // digPow(89, 1) //=== 89
+      // digPow(695, 2) // === 1390
+      // digPow(46288, 3) // === 2360688
+      // digPow(92, 1)
+
+      // function digitalRoot(n) {
+      //   let result;
+
+      //   function recursion(nums) {
+      //     if(nums < 10) {return nums}
+
+      //     result = nums.toString().split('').reduce((acc, curr) => +acc + +curr, 0)
+
+      //     return recursion(result)
+      //   }
+
+      //   recursion(n)
+
+      //   console.log(result);
+
+      // }
+
+      // function digitalRoot(n) {
+      //   while(n >= 10) {
+      //     n = n.toString().split('').reduce((acc, curr) => +acc + +curr, 0)
+      //   }
+
+      //   console.log(n);
+
+      // }
+
+      // digitalRoot(942)
+      // digitalRoot(132189)
+      // digitalRoot(493193)
+
+      // function spinWords(str){
+      //   let arr = str.split(' ')
+
+      //   arr = arr.map((item) => {
+      //     if(item.length > 5) {
+      //       return item.split('').reverse().join('')
+      //     }else{
+      //       return item
+      //     }
+      //   })
+
+      //   console.log(arr.join(' '));
+
+      // }
+
+      // spinWords("Hey fellow warriors")
+
+      // const anna = {
+      //   speed : 20,
+      //   reactionTime : 1,
+      // }
+
+      // const bob = {
+      //   speed : 30,
+      //   reactionTime : 3,
+      // }
+
+      // let len = 120
+
+      // function dragRace(len, anna, bob) {
+
+      //   let annaTime = len / anna.speed
+      //   let bobTime = len / bob.speed
+
+      //   console.log(annaTime, bobTime);
+
+      //   let annaTotalTime = annaTime + anna.reactionTime
+      //   let bobTotalTime = bobTime + bob.reactionTime
+
+      //   console.log(annaTotalTime, bobTotalTime);
+
+      //   if(annaTotalTime < bobTotalTime) {
+      //     console.log("Anna is the winner");
+      //   }else if(bobTotalTime < annaTotalTime) {
+      //     console.log("Bob is the winner");
+      //   }else{
+      //     console.log("draw");
+      //   }
+
+      // }
+
+      // // dragRace(100, anna, bob)
+      // // dragRace(150, anna, bob)
+      // dragRace(len, anna, bob)
+
+      // let arr = [4, 5, 6, 8, 9]
+      // let arr = [14, 15, 16, 18, 19]
+
+      // function findMissing(arr) {
+      //   for(let i = 0; i < arr.length; i++) {
+      //     if(arr[i + 1] - arr[i] > 1) {
+      //       console.log(arr[i] + 1);
+      //     }
+      //   }
+      // }
+
+      // findMissing(arr)
+
+      // let arr = [1, 3, 4, 7]
+
+      // function findMissing(arr) {
+      //   arr = arr.sort((a, b) => a - b)
+      //   let missingNum = []
+
+      //   for(let  i = 0; i < arr.length - 1; i++) {
+      //     let diff = arr[i + 1] - arr[i]
+      //     // console.log(diff);
+      //     if(diff > 1) {
+      //       for(let j = 1; j < diff; j++) {
+      //         missingNum.push(arr[i] + j)
+      //       }
+      //     }
+      //   }
+
+      //   console.log(missingNum);
+
+      // }
+
+      // findMissing(arr)
+
+      // let anna = {
+      //   reactTime : 1,
+      //   acc : 20,
+      //   speed : 20,
+      // }
+      // let bob = {
+      //   reactTime : 2,
+      //   acc : 10,
+      //   speed : 40,
+      // }
+
+      // function dragRace(len, anna, bob) {
+
+      //   const timeToComplete = (car) => {
+      //     const {reactTime, acc, speed} = car
+
+      //     //pehle time calculate krna hai jitna lagay ga top speed tk pounchny tk formula ---- t = v/a
+      //     let tAcc = speed / acc
+
+      //     //abb wo distance nikalna hai jo during acceleration cover ho ga formula ----  d = 1/2 * a * t**2
+      //     let dAcc =  0.5 * acc * tAcc**2
+
+      //     //agar acceleration kr ty hoay distance clear ho jye tou
+      //     if(dAcc >= len) {
+      //       // yahan time calculate kr k reaction time plus krna ha formula ---- t = Math.sqrt((2 * len) / acc)
+      //       let  tfinish = Math.sqrt((2 * len) / acc)
+      //       return tfinish + reactTime
+      //     }else{
+      //       //agar abi distance poura nai hoa tou pehle total distance/length sy acceleration wala distance niklay ga
+      //       let dConst = len - dAcc
+      //       //abb top speed pe jitna time lagay ga distance cover honay mein
+      //       let tConst = dConst / speed
+      //       //abb reaction time aur acceleration time add kr dena hai iss time mein
+      //       return reactTime + tConst + tAcc
+      //     }
+      //   }
+
+      //   let annaTotalTime = timeToComplete(anna)
+      //   let bobTotalTime = timeToComplete(bob)
+
+      //   if(annaTotalTime < bobTotalTime) {
+      //     console.log("Anna is the winner");
+      //   }else if(bobTotalTime < annaTotalTime) {
+      //     console.log("Bob is the winner");
+      //   }else{
+      //     console.log("draw");
+      //   }
+      // }
+
+      // function dragRace(len, anna, bob) {
+      //   function timeToComplete(car) {
+      //     const {reactTime, acc, speed} = car
+
+      //     let tAcc = speed / acc
+      //     let dAcc = 0.5 * acc * tAcc**2
+
+      //     if(dAcc >= len) {
+      //       let tFinish = Math.sqrt((2*len)/acc)
+      //       return tFinish + reactTime
+      //     }else{
+      //       dCons = len - dAcc
+      //       tCons = dCons / speed
+      //       return reactTime + tAcc + tCons
+      //     }
+      //   }
+
+      //   let annaTotalTime = timeToComplete(anna)
+      //   let bobTotalTime = timeToComplete(bob)
+
+      //   if(annaTotalTime < bobTotalTime) {
+      //     console.log("Anna is the winner");
+      //   }else if(bobTotalTime < annaTotalTime) {
+      //     console.log("Bob is the winner");
+      //   }else{
+      //     console.log("draw")
+      //   }
+      // }
+
+      // dragRace(90, anna, bob) //anna
+      // dragRace(120, anna, bob) //bob
+      // dragRace(100, anna, bob) //draw
+
+      //SUVAT equations ==>> s = displacement, u = initial velocity, v = final velocity, a = acceleration, t = time
+
+      // 1- v = u + at
+
+      // Use 𝑠 = 𝑢𝑡 + 0.5𝑎𝑡2 when you know the initial velocity (u) and time.
+      // 2- s = ut + (1/2)*a*t**2 ==>> s = ut + 0.5 * a * t**2 === s = ut + 0.5 at**2
+      //EXAMPLE == A car starts from rest (u=0) and accelerates at a= 2 m2/s How far does it travel in t = 5 sec
+
+      // 3- s = 0.5 * (u + v) * t
+      // EXAMPLE === A cyclist starts with an initial velocity of 10 m/s and accelerates uniformly to a final velocity of
+      // 20 m/s over 5 seconds. How far does the cyclist travel during this time?
+
+      // 4- v**2 = u**2 + 2as
+      //EXAMPLE === Suppose a Car is moving at a speed of 40 m/s, and it starts to accelerate at a = 5 m/s for 10 secs,
+      //  what will be the velocity after 40 m.
+
+      // Use 𝑠 = 𝑣𝑡 − 0.5𝑎𝑡2 when you know the final velocity (v) and time
+      // 5- s = vt - 0.5at**2
+      //EXAMPLE == A train is moving at a final velocity of v = 20 m/s and decelerates uniformly at a = 2 m2/s for t = 4 secs
+      // How far does it travel during this time?
+
+      // From km/hr to m/s === km/hr / 3.6
+      // From miles/hr to m/s === miles/hr / 2.237
+
+      //acceleration in real world === miles/hr/sec OR km/hr/sec
+      //1 km/hr/sec === 1/3.6 m/s2 === 0.277m/s2
+      //1 mile/hr/sec === 1/2.237 m/s2 === 0.447m/s2
+      //1 g = 9.8 m/s2
+
+      // 1 m/s² = 3.6 km/h/s
+      // 1 m/s² = 2.23694 mi/h/s
+
+      // let anna = {
+      //   reactTime: 1,
+      //   speed: 40,
+      //   deceleration: 10,
+      // };
+
+      // function emergencyStop(deer, anna) {
+      //   const { reactTime, speed, deceleration } = anna;
+
+      //   const drec = speed * reactTime;
+      //   const tDec = speed / deceleration;
+
+      //   const dDec = 0.5 * deceleration * tDec ** 2;
+
+      //   const totalDistance = drec + dDec;
+      //   console.log(totalDistance);
+
+      //   const distanceReachingDeer = deer - drec;
+      //   const speedatDeer = Math.sqrt(
+      //     Math.max(speed ** 2 - deceleration * distanceReachingDeer, 0),
+      //   );
+
+      //   if (totalDistance <= deer - 10) {
+      //     console.log('What was all the fuzz about?');
+      //   } else if (totalDistance > deer - 10 && totalDistance <= deer) {
+      //     console.log('Phew, that was close...');
+      //   } else if (speedatDeer < 10) {
+      //     console.log('The deer jumps away in the nick of time!');
+      //   } else {
+      //     console.log('An accident was unavoidable...');
+      //   }
+      // }
+
+      // emergencyStop(130, anna)
+      // emergencyStop(120, anna)
+      // emergencyStop(121, anna)
+      // emergencyStop(129, anna)
+      // emergencyStop(115, anna);
+      // emergencyStop(116, anna)
+
+
+      
+      // function tribonacci(signature,n){
+      //   let newArr = []
+      //   let num = 0
+      //   signature.forEach((ele) => {
+      //     num += ele 
+      //   })
+
+      //   num = num.toString()
+      //   newArr.push(...signature)
+      //   newArr.push(+num)
+
+      //   while(newArr.length < n) {
+      //     newArr.push(newArr[newArr.length - 1] + newArr[newArr.length - 2] + newArr[newArr.length - 3])
+      //   }
+
+      //   console.log(newArr.slice(0, n));
+        
+      // }
+
+      // tribonacci([1,1,1],10)
+
+    
+      // function permutations(str) {
+      //   let result = []
+
+      //   if(str.length === 0) {
+      //     result.push('')
+      //     return result
+      //   }
+
+      //   for(let i = 0; i < str.length; i++) {
+      //     let firstChar = str[i]
+      //     let restOfStr = str.slice(0, i) + str.slice(i + 1)
+      //     let subpermutations = permutations(restOfStr)
+
+      //     for(let j = 0; j < subpermutations.length; j++) {
+      //       result.push(firstChar + subpermutations[j])
+      //     }
+
+      //   }
+      //   return result
+        
+      // }
+
+      // console.log(permutations('abc'));
+
+      
+      // let arr = [7, 8, 9]
+      // let arr2 = [1,2,3,4,5,6]
+      // console.log(arr.concat(arr2));
+      
+      // function findCombos(arr) {
+      //   function flattenAndFilter(arr) {
+      //     let flat = []
+      //     for(const item of arr) {
+      //       if(Array.isArray(item)) {
+      //         flat = flat.concat(flattenAndFilter(item))
+      //       }else if(item !== null && item !== undefined) {
+      //         flat.push(item)
+      //       }
+      //     }
+      //     return flat
+      //   }
+
+      //   function factorial(n) {
+      //     return n <= 1 ? 1 : n * factorial(n - 1) 
+      //   }
+
+      //   function countPermutations(arr) {
+      //     let freq = {}
+
+      //     for(let num of arr) {
+      //       freq[num] = (freq[num] || 0) + 1
+      //     }
+
+      //     let total = factorial(arr.length)
+
+      //     for(let count of Object.values(freq)) {
+      //       // count k factorial sy divide krny ka maqsad duplicate value ko khatam krna hai
+      //       total /= factorial(count)
+      //     }
+
+      //     return total
+      //   }
+
+      //   let flattenedArr = flattenAndFilter(arr)
+
+      //   //agar values 2 sy kam hain (matlab aik) arr mein tou sirf aik tarha sy he arrange ho sakta hai
+      //   if(flattenedArr.length < 2) return 1
+
+      //   return countPermutations(flattenedArr)
+      // }
+      
+      // console.log(findCombos([[], [2, 2], [3]]) );
+      
+      // findCombos([1,2,2,2,4,4,5,5,5,5,5,6,6]) 
+
+
+
+      // function findCombos(arr) {
+      //   function flattenAndFilter(arr) {
+      //     let flat = []
+      //     for(let item of arr) {
+      //       if(Array.isArray(item)) {
+      //         flat = flat.concat(flattenAndFilter(item))
+      //       }else if(item !== null && item !== undefined) {
+      //         flat.push(item)
+      //       }
+      //     }
+      //     return flat
+      //   }
+
+      //   // return flattenAndFilter(arr)
+
+      //   // function factorial(n) {
+      //   //   return n <= 1 ? 1 : n * factorial(n - 1)
+      //   // }
+
+      //   function permutations(arr) {
+      //     if(arr.length <= 1) return [arr]
+
+      //     let uniquePerm = new Set()
+
+      //     for(let i = 0; i < arr.length; i++) {
+      //       let firstitem = arr[i]
+      //       let restOfItems = [...arr.slice(0, i), ...arr.slice(i + 1)]
+      //       let subPerms = permutations(restOfItems)
+
+      //       // for(let j = 0; j < subPerms.length; j++) {
+      //       //   uniquePerm.add([firstitem, ...subPerms[j]].toString())
+      //       // }
+
+      //       for(let perms of subPerms) {
+      //         uniquePerm.add([firstitem, ...perms].toString())
+      //       }
+      //     }
+
+      //     return uniquePerm
+      //   }
+
+      //   let flattenedArr = flattenAndFilter(arr)
+
+      //   if(flattenedArr.length < 2) return [flattenedArr]
+
+      //   return permutations(flattenedArr)
+      // }
+
+
+      // function findCombos(arr) {
+      //   function flattenAndFilter(arr) {
+      //     let flat = []
+      //     for(let item of arr) {
+      //       if(Array.isArray(item)) {
+      //         flat = flat.concat(flattenAndFilter(item))
+      //       }else if(item !== null && item !== undefined) {
+      //         flat.push(item)
+      //       }
+      //     }
+      //     return flat
+      //   }
+
+      //   function factorial(n) {
+      //     return n <= 1 ? 1 : n * factorial(n - 1)
+      //   }
+
+      //   // function countPermutations(arr) {
+      //   //   let freq = arr.reduce((acc, curr) => {
+      //   //     acc[curr] = (acc[curr] || 0) + 1
+      //   //     return acc
+      //   //   }, {})
+
+      //   //   // let freq = {}
+
+      //   //   // for(let item of arr) {
+      //   //   //   freq[item] = (freq[item] || 0) + 1
+      //   //   // }
+
+      //   //   console.log(freq);
+          
+      //   //   let total = factorial(arr.length)
+
+      //   //   for(let count of Object.values(freq)){
+      //   //     total /= factorial(count)
+      //   //   }
+
+      //   //   return total
+      //   // }
+
+      //   // function generatePermutations(arr) {
+      //   //   if(arr.length <= 1) return [arr]
+
+      //   //   let uniquePerm = new Set()
+
+      //   //   for(let i = 0; i < arr.length; i++) {
+      //   //     let firstItem = arr[i]
+      //   //     let restOfItems = [...arr.slice(0, i), ...arr.slice(i + 1)]
+      //   //     let subPerms = generatePermutations(restOfItems)
+
+      //   //     for(let perms of subPerms) {
+      //   //       // uniquePerm.add([firstItem, ...perms])
+      //   //       uniquePerm.add([firstItem, ...perms].toString())
+      //   //     }
+      //   //   }
+      //   //   // return uniquePerm
+      //   //   return [...uniquePerm].map((str) => str.split(',').map(Number))
+      //   // }
+
+      // //   let flattenedArr = flattenAndFilter(arr)
+
+      // //   if(flattenedArr.length < 2) return [flattenedArr]
+
+      // //   return generatePermutations(flattenedArr)
+      // //   // return countPermutations(flattenedArr)
+      // // }
+
+      // // console.log(findCombos([[], [2, 2], [3]]));
+      
+
+      // function duplicateEncode(word){
+      //   const freq = word.toLowerCase().split('').reduce((acc, curr) => {
+      //     acc[curr] = (acc[curr] || 0) + 1
+      //     return acc
+      //   }, {})
+
+      //   console.log(freq);
+        
+
+      //   let arr = []
+
+        
+      //   for(let letter of word.toLowerCase()) {
+      //     if(freq[letter] === 1) {
+      //       arr.push('(')
+      //     }else {
+      //       arr.push(')')
+      //     }          
+      //   }
+
+      //   console.log(arr.join(''));
+        
+      // }
+
+
+      // function duplicateEncode(word){
+      //   let arr = word.toLowerCase().split('')
+      //   // console.log(arr);
+        
+      //   arr.map((letter, index, array) => {
+      //     //jo letter aik he dafah aata hai uss ka first aur last index same hota hai
+      //     //jo letter repeat hota hai uss ka first aur last index different hota hai
+      //     // console.log(array.indexOf(letter));
+      //     console.log(array.lastIndexOf(letter));
+      //   })
+      // }
+      
+
+      // duplicateEncode('Success')
+      // duplicateEncode('CodeWarrior') // ))(()())())
+      // Incorrect answer for 'CodeWarrior': expected '))(()())())' to equal '()(((())())'
+
+
+      // function onlyDuplicates(str) {
+
+      //   let arr = str.toLowerCase().split('')
+        
+      //   // let newArr = []
+
+      //   arr = arr.filter((letter, index, array) => {
+      //     return array.indexOf(letter) !== array.lastIndexOf(letter)
+      //   })
+
+      //   console.log(arr);
+        
+      // }
+
+      // onlyDuplicates("abccdefee")
+
+
+      // let obj = 
+      // {
+      //   "1": ["A", "B", "C"],
+      //   "2": ["A", "B", "D", "A"],
+      // }
+
+      // const removeDuplicateIds = (obj) => {
+      //  let sortedKeys = Object.keys(obj).sort((a, b) => b - a)
+       
+      //  console.log(sortedKeys);
+       
+      //   let seen = new Set()
+
+      //   for(let key of sortedKeys) {
+      //     obj[key] = obj[key].filter((letter) => {
+      //       if(!seen.has(letter)) {
+      //         seen.add(letter)
+      //         console.log(seen);
+              
+      //         return true
+      //       }
+      //       else{return false}
+      //     })
+      //   }
+
+      //   console.log(obj);
+        
+      // };
+
+    //   function removeDuplicateIds(obj) {
+    //   // Sort keys in descending order
+    //   const sortedKeys = Object.keys(obj).sort((a, b) => b - a);
+
+    //   // Track seen values
+    //   const seen = new Set();
+
+    //   // Iterate through sorted keys
+    //   for (const key of sortedKeys) {
+    //     // Filter duplicates within the array
+    //     const uniqueArray = [];
+    //     for (const value of obj[key]) {
+    //       if (!seen.has(value)) {
+    //         uniqueArray.push(value);
+    //         seen.add(value);
+    //       }
+    //     }
+    //     // Update the object
+    //     obj[key] = uniqueArray;
+    //   }
+
+    //   console.log(obj);
+      
+    //   return obj;
+    // }
+
+    //   removeDuplicateIds(obj)
+
+
+
+    // function solution(arr){
+    //   let freq = values.reduce((acc, curr) => {
+    //     acc[curr] = (acc[curr] || 0) + 1
+    //     return acc
+    //   }, {})
+
+    //   // console.log(freq);
+    //   if(Object.values(freq).every((value) => value === 1)){
+    //     console.log('false');
+    //   }else{
+    //     console.log('true');
+        
+    //   }
+      
+    // }
+
+    function solution(...arg) {
+      let uniqueItems = new Set(arg)
+
+      console.log(arg.length);
+      
+
+      console.log(uniqueItems.size !== arg.length);
+      
+    }
+
+    solution('1', '2', '3')
+
+    </script>
+  </body>
+</html>

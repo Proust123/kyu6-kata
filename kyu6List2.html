@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // function solve(n) {
+      //     let currNum = [1]
+      //     for(let i = 1; i < n; i++){
+      //         let nxtNum = [1]
+      //         for(let j = 1; j < currNum.length; j++){
+      //             nxtNum.push(currNum[j] + nxtNum[j - 1])
+      //         }
+
+      //         nxtNum.push(nxtNum[nxtNum.length - 1])
+      //         currNum = nxtNum
+      //     }
+
+      //     return currNum.reduce((acc, curr) => acc + curr, 0)
+
+      //CODE EXPLAINATION :
+
+      //n 1 sy start ho rha hai
+      //starting [1]
+      //first iteration = [1] ===>> j aur currNum.length 1 hai tou j loop nai chalta
+      //nxtNum.push(nxtNum[nxtNum.length - 1]) === iss step sy [1, 1] ho gya
+      //currNum = nxtNum === iss step sy currNum abb [1, 1] hai matlab length 2 ho gai
+      //[1] --- first row
+      //[1, 1] --- second row
+
+      //second iteration = [1, 1] ===>>> j===1 aur currNum.length - 1===2 tou loop 1 dafah chalay ga
+      //first-loop === nxtNum.push(currNum[j] + nxtNum[j - 1]) === nxtNum [1] hai, currNum[j] 1 hai aur
+      //nxtNum[j - 1] bhi 1 hai tou [1, 2] ho jye ga
+      //nxtNum.push(nxtNum[nxtNum.length - 1]) === iss step sy [1, 2, 2] ho gya
+      //currNum = nxtNum === iss step sy currNum abb [1, 2, 2] hai matlab length 3 ho gai
+      //[1] --- first row
+      //[1, 1] --- second row
+      //[1, 2, 2] --- third row
+
+      // third iteration = [1, 2, 2] ==>> j===1 aur currNum.length - 1===3 tou loop 2 dafah chalay ga
+      //first-loop === nxtNum.push(currNum[j] + nxtNum[j - 1]) === nxtNum [1] hai, currNum[j] 2 hai aur
+      //nxtNum[j - 1] 1 hai tou [1, 3]
+      //second-loop === nxtNum.push(currNum[j] + nxtNum[j - 1]) === nxtNum [1, 3] hai, currNum[j] 2 hai aur
+      //nxtNum[j - 1] 2 hai tou [1, 3, 5]
+      //nxtNum.push(nxtNum[nxtNum.length - 1]) === iss step sy [1, 3, 5, 5] ho gya
+      //currNum = nxtNum === iss step sy currNum abb [1, 3, 5, 5] hai matlab length 4 ho gai
+      //[1] --- first row
+      //[1, 1] --- second row
+      //[1, 2, 2] --- third row
+      //[1, 3, 5, 5] --- fourth row
+
+      // fourth iteration = [1, 3, 5, 5] ===>>> currNum.length - 1 === 4 aur j === 1 hai tou loop 3 dafah
+      //chalay ga :
+      //first-Loop : nxtNum.push(currNum[j] + nxtNum[j - 1]) ==>> nxtNum [1] hai currNum[j] = 3 aur
+      //nxtNum[j - 1] = 1 tou answer === [1, 4]
+      //Second-loop : nxtNum.push(currNum[j] + nxtNum[j - 1]) ==>> nxtNum[1, 4] hai currNum[j] = 5 aur
+      //nxtNum[j - 1] = 4 tou answer === [1, 4, 9]
+      //Third-Loop : nxtNum.push(currNum[j] + nxtNum[j - 1]) ==>> nxtNum[1, 4, 9] hai currNum[j] = 5 aur
+      //nxtNum[j - 1] = 9 tou answer === [1, 4, 9, 14]
+      //nxtNum.push(nxtNum[nxtNum.length - 1]) === [1, 4, 9, 14, 14]
+      //currNum = nxtNum === iss step sy currNum abb [1, 4, 9, 14, 14] hai matlab length 5 ho gai
+      //[1] --- first row
+      //[1, 1] --- second row
+      //[1, 2, 2] --- third row
+      //[1, 3, 5, 5] --- fourth row
+      //[1, 4, 9, 14, 14] --- fifth row
+      // }
+
+      // console.log(solve(5));
+
+      //         let s = "3af4r6b3sz"
+
+      //         function stringExpansion(s) {
+      //             let arr = s.split('')
+      //             let newArr = []
+      //             let multiplier = 1
+
+      //             for(let i = 0; i < arr.length; i++){
+      //                 if(arr[i] % 1 === 0){
+      //                     multiplier = parseInt(arr[i])
+      //                 }else if(arr[i] % 1 !== 0){
+      //                     newArr.push(arr[i].repeat(multiplier))
+      //                 }
+      //             }
+      // //
+      //             console.log(newArr.join(''));
+      //         }
+
+      //         stringExpansion(s);
+
+      // let array = [...Array(10).keys()]
+      // console.log(array);
+
+      // let array = ['a', 'b', 'c', 'd'];
+
+      // function shuffling(array) {
+      //   for (let i = array.length - 1; i > 0; i--) {
+      //     let j = Math.floor(Math.random() * (i + 1));
+
+      //     [array[i], array[j]] = [array[j], array[i]];
+      //   }
+
+      //   console.log(array);
+      // }
+
+      // shuffling(array);
+
+      // let str = '521'
+
+      // function shuffleArray(str) {
+      //     let arr = str.split('')
+
+      //     for(let i = 0; i < arr.length; i++){
+      //       let j = Math.floor(Math.random() * (i + 1));
+
+      //       [arr[i], arr[j]] = [arr[j], arr[i]]
+      //     }
+
+      //   // console.log(arr.join(''));
+      //   return arr.join('')
+
+      // }
+
+      // function divisible(str) {
+      //   let shuffled
+      //   let count = 0
+
+      //   do{
+
+      //     shuffled = shuffleArray(str)
+      //     count++
+
+      //   }while(parseInt(shuffled) % 25 !== 0)
+
+      //   console.log(count);
+
+      // }
+
+      // divisible(str)
+
+      // console.log(Math.floor(Math.random() * 10));  //generate number from 0 - 9 (9 inclusive)
+      // console.log(Math.floor(Math.random() * 10) + 1);  //generate number from 1 - 10 (10 inclusive)
+
+      // function countMoves(str, end) {
+      //   let moves = 0
+      //   let curr = str
+      //   // console.log(curr); //521
+
+      //   let lastDigit = end[1]
+      //   // console.log(lastDigit); //end===25 ==>> end[1] = 5
+
+      //   let lastIndex = curr.lastIndexOf(lastDigit)
+      //   // console.log(lastIndex); //curr===521 ==>> lastIndex = 0 ==== lastIndexOf() method, last occurence wala index deta hai
+
+      //   if(lastIndex === -1) return -1 //matlab agar digit hai he nai tou agay janay ki zarort he nai
+
+      //   //abb yahan moves calculate hn gi, kitni moves chahiye curr mein jo number hai ussy end wali position pe laany k liye ---
+      //   //agar curr === 521 hai aur end === 25 tou curr k 5 ko two moves chahiye last mein aanay k liye
+      //   moves += (curr.length - 1 - lastIndex)
+      //   // console.log(moves); // curr.length === 3 ==>> 3 - 1 - 0 ===>> 2 - 0 == 2
+
+      //   //abb curr ko modify krna hai kyu k last digit ka pta chala liya hai
+      //   curr = curr.slice(0, lastIndex) + curr.slice(lastIndex + 1)
+      //   console.log(curr); //curr.slice(0, 0) + curr.slice(1)
+
+      //   let firstDigit = end[0]
+
+      //   let firstIndex = curr.lastIndexOf(firstDigit)
+      //   // console.log(firstIndex);
+
+      //   if(firstIndex === -1) return -1
+
+      //   moves += (curr.length - 1 - firstIndex)
+
+      //   console.log(moves);
+
+      // }
+
+      // countMoves('521', '25')
+
+      // function solve(n) {
+      //   let str = n.toString()
+
+      //   function countMoves(str, end){
+      //     let moves = 0
+      //     let curr = str //735
+
+      //     let lastDigit = end[1] //yahan pe end '75' ho ga kyu baqi sb possible endings -1 return karay gi kyu k sirf 7 aur 5 hain str mein
+      //     let lastIndex = curr.lastIndexOf(lastDigit) // lastDigit '5' tha, uss ka last index 2 ho ga
+
+      //     if(lastIndex === -1) return -1
+
+      //     moves += (curr.length - 1 - lastIndex) // 0 + (3 - 1 - 2) === 0
+      //     curr = curr.slice(0, lastIndex) + curr.slice(lastIndex + 1) //73 + ''
+
+      //     let firstDigit = end[0] // 7
+      //     let firstIndex = curr.lastIndexOf(firstDigit) // 0
+
+      //     if(firstIndex === -1) return -1
+
+      //     moves += (curr.length - 1 - firstIndex) // 0 + (2 - 1 - 0) === 1
+
+      //     return moves
+      //   }
+
+      //   if(str % 25 === 0) return 0
+
+      //   let possibleEndings = ['00', '25', '50', '75']
+
+      //   let minMoves = Infinity
+
+      //   for(const end of possibleEndings) {
+      //     let moves = countMoves(str, end)
+
+      //     if(moves !== -1){
+      //       minMoves = Math.min(minMoves, moves)
+      //     }
+      //   }
+
+      //   return minMoves === Infinity ? -1 : minMoves
+      // }
+
+      // console.log(solve(735));
+
+      // function solve(n) {
+      //   let str = n.toString()
+
+      //   function getMoves(str, end) {
+      //     let moves = 0
+      //     let curr = str
+
+      //     let lastDigit = end[1]
+      //     let lastIndex = curr.lastIndexOf(lastDigit)
+
+      //     if(lastIndex === -1) return -1
+
+      //     moves += (curr.length - 1 - lastIndex)
+      //     curr = curr.slice(0, lastIndex) + curr.slice(lastIndex + 1)
+
+      //     let firstDigit = end[0]
+      //     let firstIndex = curr.lastIndexOf(firstDigit)
+
+      //     if(firstIndex === -1) return -1
+
+      //     moves += (curr.length - 1 - firstIndex)
+
+      //     const unleadingZeros = (s) => {
+      //       let index = [...s].findIndex((c) => c !== '0')
+      //       return index === -1 ? Infinity : index
+      //     }
+
+      //     moves += unleadingZeros(curr)
+
+      //     return moves
+      //   }
+
+      //   if(str % 25 === 0) return 0
+
+      //   const possibleEndings = ['00', '25', '50', '75']
+
+      //   let minMoves = Infinity
+
+      //   for(const end of possibleEndings) {
+      //     let allMoves = getMoves(str, end)
+
+      //     if(allMoves !== -1) {
+      //       minMoves = Math.min(minMoves, allMoves)
+      //     }
+
+      //   }
+
+      //   return minMoves === Infinity ? -1 : minMoves
+      // }
+
+      // console.log(solve(521));
+
+      // let num = 70304
+
+      // function expandedForm(num) {
+      //   return num.toString()
+      //   .split('')
+      //   .reverse()
+      //   .map((ele, idx) => ele * Math.pow(10, idx))
+      //   .filter((ele) => ele > 0)
+      //   .reverse()
+      //   .join(' + ')
+      // }
+
+      // console.log(expandedForm(num));
+
+      // console.log(Math.pow(8, 10));
+
+      // const ages = [18, 25, 30, 40, 50, 60, 70, 80, 90, 100]
+
+      // function change(ages) {
+      //   const ageGroups = {
+      //     teens : false,
+      //     twenties : false,
+      //     thirties : false,
+      //     forties : false,
+      //     fifties : false,
+      //     sixties : false,
+      //     seventies : false,
+      //     eighties : false,
+      //     ninties : false,
+      //     centenarians : false
+      //   }
+
+      //   for(let i = 0; i < ages.length; i++) {
+      //     if(ages[i] > 12 && ages[i] < 20) {
+      //       ageGroups.teens = true
+      //     }else if(ages[i] >= 20 && ages[i] < 30) {
+      //       ageGroups.twenties = true
+      //     }else if(ages[i] >= 30 && ages[i] < 40) {
+      //       ageGroups.thirties = true
+      //     }else if(ages[i] >= 40 && ages[i] < 50) {
+      //       ageGroups.forties = true
+      //     }else if(ages[i] >= 50 && ages[i] < 60) {
+      //       ageGroups.fifties = true
+      //     }else if(ages[i] >= 60 && ages[i] < 70) {
+      //       ageGroups.sixties = true
+      //     }else if(ages[i] >= 70 && ages[i] < 80) {
+      //       ageGroups.seventies = true
+      //     }else if(ages[i] >= 80 && ages[i] < 90) {
+      //       ageGroups.eighties = true
+      //     }else if(ages[i] >= 90 && ages[i] < 100) {
+      //       ageGroups.ninties = true
+      //     }else if(ages[i] >= 100) {
+      //       ageGroups.centenarians = true
+      //     }
+      //   }
+
+      //   console.log(ageGroups);
+
+      // }
+
+      // change(ages)
+
+      // let arr = [
+      //   [4, 5, 7],
+      //   [3, 9, 1],
+      //   [8, 6, 2]
+      // ]
+
+      // function diagonal(arr) {
+      //   let result= []
+      //   let length = arr.length
+
+      //   while(arr[0].length) {
+
+      //     arr.forEach((ele, idx) => {
+      //       // console.log('index: ',idx, 'length: ',length);
+
+      //       if(!ele.length) {
+      //         return
+      //       }
+
+      //       if(idx >= length) {
+      //         result.push(ele.pop()) //==>>[2, 1, 6, 7, 9, 8, 5, 3, 4] agar while(arr[0].length) hai tou
+      //       }
+
+      //       // if(idx >= length) {
+      //       //   result.unshift(ele.pop()) //==>> // [4, 3, 5, 8, 9, 7, 6, 1, 2] agar while(arr[0].length) hai tou
+      //       // }
+
+      //       // if(idx >= length) {
+      //       //   result.push(ele.shift()) //==>>[8, 3, 6, 4, 9, 2, 5, 1, 7] agar while(arr[0].length) hai tou
+      //       // }
+
+      //       // if(idx >= length) {
+      //       //   result.unshift(ele.shift()) //==>>[7, 1, 5, 2, 9, 4, 6, 3, 8] agar while(arr[0].length) hai tou
+      //       // }
+
+      //     })
+
+      //     length--
+      //   }
+
+      //   console.log(result);
+
+      // }
+
+      // diagonal(arr)
+
+      // pehle length 3 hai --- forEach method k through each element pe iterate ho ga aur condition if(idx >= length) check ho gi
+      // 0>=3 --- 1>=3 --- 1>=3 ===>>>false
+
+      // abb length 2 hai --- forEach method k through each element pe iterate ho ga aur condition if(idx >= length) check ho gi
+      // 0>=2 --- 1>=2 --- 2>=2 ===>>> yahan array index 2 == [8, 6, 2] sy 2 pop ho ga
+
+      // abb length 1 hai --- forEach method k through each element pe iterate ho ga aur condition if(idx >= length) check ho gi
+      // 0>=1 --- 1>=1 --- 2>=1 ===>>> yahan pehle array index 1 == [3, 9, 1] sy 1 pop ho ga aur phr array index 2 == [8, 6] sy 6 pop ho ga
+
+      // abb length 0 hai --- forEach method k through each element pe iterate ho ga aur condition if(idx >= length) check ho gi
+      // 0>=0 --- 1>=0 --- 2>=0 ===>>> yahan pehle array index 0 == [4, 5, 7] sy 7 pop ho ga aur phr array index 1 == [3, 9]  sy 9 pop ho ga
+      //aur phr index 2 == [8,] sy 8 pop ho ga
+
+      // abb length -1 hai --- forEach method k through each element pe iterate ho ga aur condition if(idx >= length) check ho gi
+      // 0>=-1 --- 1>=-1 --- 2>=-1 ===>>> yahan pehle array index 0 == [4, 5] sy 5 pop ho ga aur phr array index 1 == [3]  sy 3 pop ho ga
+      //aur phr index 2 == [], ye empty hai tou '' add krwaon ga
+
+      // abb length -2 hai --- forEach method k through each element pe iterate ho ga aur condition if(idx >= length) check ho gi
+      // 0>=-2 --- 1>=-2 --- 2>=-2 ===>>> yahan pehle array index 0 == [4] sy 4 pop ho ga aur phr array index 1 == [0]  ye empty hai tou ''
+      // add krwaon ga aur phr index 2 == [], ye empty hai tou '' add krwaon ga
+
+      //RESULTING ARRAY ===>>> [2, 1, 6, 7, 9, 8, 5, 3, 4]
+
+      // function lenCurve(n) {
+      //   let sum = 0
+      //   let h = 1 / n
+
+      //   for(let i = 0; i < n; i++) {
+      //     let xi = i * h
+      //     let xiPlus1 = (i + 1) * h
+      //     let yi = xi * xi
+      //     let yiPlus1 = xiPlus1 * xiPlus1
+
+      //     let d = Math.sqrt((xiPlus1 - xi)*(xiPlus1 - xi) + (yiPlus1 - yi)*(yiPlus1 - yi))
+
+      //     sum += d
+      //   }
+
+      //   console.log(sum);
+
+      // }
+
+      // lenCurve(10)
+
+      // function solve(n) {
+      //   let prev = [1]
+      //   for(let i = 1; i < n; i++) {
+      //     let next = [1]
+      //     for(let j = 1; j < prev.length; j++) {
+      //       next.push(prev[j] + next[j - 1])
+      //     }
+
+      //     next.push(next[next.length - 1])
+
+      //     prev = next
+      //   }
+
+      //   console.log(prev.reduce((acc, curr) => acc + curr, 0));
+
+      // }
+
+      // solve(5)
+
+      // 1 ===>>> yahan sy start hoa prev ki value 1 hai
+
+      // 1 1 ===>>> yahan sy next start hoa js ki value 1 hai aur yahan j loop chalay ga jb tk wo prev ki length sy kam ho ga --- yahan pe
+      //j 1 hai tou false ho gi statement koi element push nai ho ga next line 1 k sath 1 push kr dy ga aur end mein prev [1,1] ho jye ga
+
+      // 1 2 2 ===>>> yahan next 1 sy start hoa, abb j loop chaly ga aik dafah kyu k j 1 hai aur prev ki length 2 hai, next jo 1 hai uss
+      //mein prev[j](prev[1]) + next[j - 1](next[1-1=0]) push ho ga jo k 1 + 1 = 2 ==>> [1, 2] aur 2 phr push ho ga [1, 2, 2] --- abb prev
+      //[1,2,2] ho jye ga
+
+      // 1 3 5 5 ===>>> yahan next 1 sy start hoa, prev ki length yahan 3 hai tou first iteration pe next.push(prev[1]+next[0]) ==>>
+      //next.push(2+1) ===>> [1,3] ===>> abb j loop phr chalay ga abb next.push(prev[2] + next[2-1]) === next.push(prev[2]+next[1]) ==>>
+      //next.push(2+3) ===>>> [1, 3, 5] aur next line mein 5 push ho ga === [1, 3, 5, 5] => ye prev ho jye gi
+
+      // 1 4 9 14 14 ===>>> yahan next 1 sy start ho ga, prev ki length yahan 4 hai, first iteration mein next.push(prev[1]+next[0]) ==>>
+      //next.push(3+1) ===>>> [1,4], second iteration mein next.push(prev[2] + next[2-1=1]) ==>> next.push(5+4) ==>> [1,4,9] ==>>>
+      //third iteration mein next.push(prev[3] + next[3-1=2]) ===>>> next.push(5 + 9) ===>>> [1,4,9,14] aur end mein 14 again push ho ga
+      //[1,4,9,14,14]
+
+      // let number = 7
+
+      //SOLUTION 1:
+      // function isTriangleNumber(number) {
+      //   if(number <= 1){
+      //     console.log(true);
+      //   }
+      //   for(let i = 1; i <= number; i++) {
+      //     let triangular = i * (i + 1)/2
+      //     if(triangular === number) {
+      //       console.log(true);
+
+      //     }else{
+      //       console.log(false);
+
+      //     }
+      //   }
+      // }
+
+      // SOLUTION 2
+      // function isTriangleNumber(number) {
+      //   let sum = 0
+      //   let step = 0
+
+      //   //ye while loop tb tk chalay ga matlab true return krta rhay ga jb tk sum jo hai wo number sy kam ya equal nai ho jata, jaisy he
+      //   //sum equal ya exceed kray ga while loop false return kr dy ga aur loop exit ho jye ga
+      //   while(sum < number) {
+      //     step++
+
+      //     sum += step
+      //   }
+
+      //   console.log(sum === number);
+      // }
+
+      // SOLUTION 3
+      // function isTriangleNumber(number) {
+      //   let perfectSqr = Math.sqrt(8 * (number + 1))
+      //   // let perfectSqr = Math.sqrt(8 * number + 1)
+      //   console.log(perfectSqr % 1 === 0);
+
+      // }
+
+      // isTriangleNumber(number)//
+
+      // function expandedForm(num) {
+      //   console.log(num.toString()
+      //   .split('')
+      //   .reverse()
+      //   .map((ele, idx) => ele * Math.pow(10, idx))
+      //   .filter((ele) => ele > 0)
+      //   .reverse()
+      //   .join(' + ')
+      //  )
+
+      // }
+
+      // expandedForm(70258)
+
+      // const numWords = {
+      //   0: 'zero',
+      //   1: 'one',
+      //   2: 'two',
+      //   3: 'three',
+      //   4: 'four',
+      //   5: 'five',
+      //   6: 'six',
+      //   7: 'seven',
+      //   8: 'eight',
+      //   9: 'nine',
+      //   10: 'ten',
+      //   11: 'eleven',
+      //   12: 'twelve',
+      //   13: 'thirteen',
+      //   14: 'fourteen',
+      //   15: 'fifteen',
+      //   16: 'sixteen',
+      //   17: 'seventeen',
+      //   18: 'eighteen',
+      //   19: 'nineteen',
+      //   20: 'twenty',
+      //   30: 'thirty',
+      //   40: 'forty',
+      //   50: 'fifty',
+      //   60: 'sixty',
+      //   70: 'seventy',
+      //   80: 'eighty',
+      //   90: 'ninety',
+      // };
+
+      // function number2words(n){
+      //   if(n <= 20) {
+      //     return numWords[n]
+      //   }else if(n < 100) {
+      //     let tens = Math.floor(n / 10) * 10
+      //     let remainder = n % 10
+      //     return remainder === 0 ? numWords[tens] : numWords[tens] + "-" + numWords[remainder]
+      //   }else if(n >= 100 && n < 1000) {
+      //     let hunds = Math.floor(n / 100)
+      //     let remainder = n % 100
+      //     return remainder === 0 ? numWords[hunds] + "hundred" : numWords[hunds] + " hundred " + number2words(remainder)
+      //   }else if(n >= 1000 && n < 1000000) {
+      //     let thous = Math.floor(n / 1000)
+      //     let remainder = n % 1000
+      //     return remainder === 0 ? number2words(thous) + "thousand" : number2words(thous) + " thousand " + number2words(remainder)
+      //   }
+      // }
+
+      // console.log(number2words(999999));
+
+      // console.log(Math.floor(59 / 10) * 10);
+      // console.log(556 % 100);
+
+      // function expandedForm(num) {
+      //   let arr = num.toString().split(".")
+
+      //   let newArr = []
+      //   newArr.push(arr.pop())
+
+      //   arr = arr.toString().split('').reverse().map((ele, idx) => ele * Math.pow(10, idx)).filter((ele) => ele > 0).reverse()
+
+      //   newArr = newArr.toString().split('').map((ele, idx) => ele > 0 ? `${ele} / ${Math.pow(10, idx+1)}` : null).filter((value) => value)
+      //   // newArr = newArr.toString().split('').map((ele, idx) => ele + '/' + Math.pow(10, idx+1)).filter((ele) => !ele.startsWith(0))
+
+      //   console.log(newArr);
+      //   // console.log([...arr, ...newArr].join(' + '));
+      // }
+
+      // expandedForm(807.304)
+
+      // function numbersOfLetters(integer) {
+
+      //   const nums = {
+      //     0 : "zero",
+      //     1 : "one",
+      //     2 : "two",
+      //     3 : "three",
+      //     4 : "four",
+      //     5 : "five",
+      //     6 : "six",
+      //     7 : "seven",
+      //     8 : "eight",
+      //     9 : "nine"
+      //   }
+
+      //   let current = integer.toString()
+      //     .split('')
+      //     .map((digit) => nums[digit])
+      //     .join('')
+
+      //   let result = [current]
+
+      //   while(true) {
+      //     let lengthWord = current.length
+      //     .toString()
+      //     .split('')
+      //     .map((digit) => nums[digit])
+      //     .join('')
+
+      //     result.push(lengthWord)
+
+      //     if(lengthWord === 'four') {
+      //       break
+      //     }
+
+      //     current = lengthWord
+      //   }
+
+      //   console.log(result);
+
+      // }
+
+      // numbersOfLetters(0)
+
+      // function doMath(str) {
+      //   let sorted = str.split(' ')
+
+      //   sorted = sorted.sort((a, b) => {
+      //     return a.replace(/\d/g, "").localeCompare(b.replace(/\d/g, ""))
+      //   }).map((ele) => ele.replace(/[a-zA-z]/g, ""))
+
+      //   let operations = ["+", "-", "*", "/"]
+
+      //   let result = +sorted[0]
+
+      //   for(let  i = 1; i < sorted.length; i++) {
+      //     let num = +sorted[i]
+      //     let operator = operations[(i - 1) % operations.length]
+
+      //     if(operator === "+") {
+      //       result += num
+      //     }else if(operator === "-") {
+      //       result -= num
+      //     }else if(operator ===  "*") {
+      //       result *= num
+      //     }else if(operator === "/") {
+      //       result /= num
+      //     }
+      //   }
+
+      //   console.log(Math.round(result));
+
+      // }
+
+      // doMath("24z6 1x23 y369 89a 900b")
+      // doMath("10a 90x 14b 78u 45a 7b 34y" )
+      // doMath("24z6 1z23 y369 89z 900b")
+
+      // console.log(['z', 'r', 'y', 'a', 'w', 'b', 'j'].sort());
+
+      // function cyclicMath (numbers) {
+      //   let sorted = numbers
+
+      //   let operations = ["+", "-", "*", "/"]
+
+      //   let result = sorted[0]
+
+      //   for(let i = 1; i < sorted.length; i++) {
+      //     let num = sorted[i]
+      //     let operator = operations[(i - 1) % operations.length]
+
+      //     if(operator === "+"){
+      //       result += num
+      //     }else if(operator === "-") {
+      //       result -= num
+      //     }else if(operator === "*") {
+      //       result *= num
+      //     }else if(operator === "/") {
+      //       result /= num
+      //     }
+      //   }
+
+      //   console.log(Math.round(result));
+
+      // }
+
+      // cyclicMath ([10, 90, 14, 78, 45, 7, 34])
+      // cyclicMath ([10, 45, 14, 7, 78, 90, 34])
+
+      // const arr = [
+      //  [4, 5, 7],
+      //  [3, 9, 1],
+      //  [7, 6, 2]
+      // ]
+
+      // function diagonal(arr) {
+      //   let length = arr.length
+      //   let newArr = []
+
+      //   while(arr[0].length) {
+      //     arr.forEach((ele, idx) => {
+      //       if(!ele.length) return
+
+      //       if(idx >= length) {
+      //         newArr.push(ele.pop())
+      //       }
+      //     })
+
+      //     length--
+      //   }
+
+      //   console.log(newArr);
+
+      // }
+
+      // diagonal(arr)
+
+      // let a = [1,2,3]
+      // let b = [5,3,2]
+      // let c = [7,3,2]
+
+      // let a = [1,2,2,3]
+      // let b = [5,3,2,2,2,2]
+      // let c = [7,3,2,2]
+
+      // function common(a,b){
+      //   let arr = []
+
+      //   const freMap = a.reduce((acc, curr) => {
+      //     acc[curr] = (acc[curr] || 0) + 1
+      //     return acc
+      //   }, {})
+
+      //   console.log(freMap);
+
+      //   b.forEach((item) => {
+      //     if(freMap[item] > 0){
+      //       // console.log(freMap[item]);
+      //       arr.push(item)
+      //       //ye decrement map mein ussi element ka ho ga heck ho rha hai, for example agar map mein {1 : 1, 2 : 2, 3 : 1} mila hai, yahan
+      //       // iss map sy check hn gi dosri array k elements, jb b pe loop kiya tou for example b array mein 2 five times hai, tou mein yehi
+      //       // chahon ga k 2 two times he aaye kyu k two times he common banta hai, jb conditions check hn gi tou sath mein freMap mein
+      //       // decrement krwata jaon ga aur kyu k condition mein check kr rha hn freMap[item] > 0 tou do dafah jb decrement hoga 2 ka tou
+      //       // map mein uss ka count  0 ho jye ga aur aglay three 2 add nai hn gy
+      //       freMap[item]--
+      //     }
+      //   })
+
+      //   console.log(arr);
+
+      // }
+
+      // function common(a,b,c){
+      //   let arr = []
+      //   let newArr = []
+
+      //   const firstMap = a.reduce((acc, curr) => {
+      //     acc[curr] = (acc[curr] || 0) + 1
+      //     return acc
+      //   }, {})
+
+      //   b.forEach((item) => {
+      //     if(firstMap[item] > 0) {
+      //       arr.push(item)
+      //       firstMap[item]--
+      //     }
+      //   })
+
+      //   const secMap = arr.reduce((acc, curr) => {
+      //     acc[curr] = (acc[curr] || 0) + 1
+      //     return acc
+      //   }, {})
+
+      //   c.forEach((item) => {
+      //     if(secMap[item] > 0) {
+      //       newArr.push(item)
+      //       secMap[item]--
+      //     }
+      //   })
+
+      //   console.log(newArr);
+
+      // }
+
+      // function common(a,b,c){
+      //   let arr = []
+      //   let newArr = []
+
+      //   let firstMap = a.reduce((acc, curr) => {
+      //     acc[curr] = (acc[curr] || 0) + 1
+      //     return acc
+      //   }, {})
+
+      //   // console.log(firstMap);
+      //   b.forEach((item) => {
+      //     // console.log(firstMap[item]);
+
+      //     if(firstMap[item] > 0) {
+      //       arr.push(item)
+      //       firstMap[item]--
+      //     }
+      //   })
+
+      //   // console.log(arr);
+
+      //   let secMap = arr.reduce((acc, curr) => {
+      //     acc[curr] = (acc[curr] || 0) + 1
+      //     return acc
+      //   }, {})
+      //   // console.log(secMap);
+
+      //   c.forEach((item) => {
+      //     if(secMap[item] > 0) {
+      //       newArr.push(item)
+      //       secMap[item]--
+      //     }
+      //   })
+
+      //   console.log(newArr);
+
+      // }
+
+      // common(a,b,c)
+
+      // let arr = [
+      //   [4, 5, 7],
+      //   [3, 9, 1],
+      //   [7, 6, 2]
+      // ]
+
+      // function diagonal(arr) {
+      //   let length = arr.length
+      //   let newArr = []
+
+      //   while(arr[0].length) {
+      //     arr.forEach((ele, idx) => {
+      //       if(ele.length === 0) return
+      //       if(idx >= length) {
+      //         // newArr.push(ele.pop())
+      //         newArr.push(ele.unshift())
+      //       }
+      //     })
+      //     length--
+      //   }
+
+      //   console.log(newArr);
+      // }
+
+      // diagonal(arr)
+
+      // function expandedForm(num) {
+      //   console.log(num.toString().split('').reverse().map((ele, idx) => ele * Math.pow(10, idx)).filter((item) => item > 0).reverse().join(' + '));
+
+      // }
+
+      // expandedForm(70304)
+
+      // function expandedForm(num) {
+      //   let left = []
+      //   let right = []
+      //   let arr = num.toString().split('.')
+
+      //   left.push(arr[0])
+      //   right.push(arr[1])
+      //   // console.log(left, right);
+      //   let newLeft = left.toString().split('').reverse().map((ele, idx) => ele * Math.pow(10, idx)).filter((item) => item > 0).reverse().join(' + ');
+      //   // console.log(newLeft);
+
+      //   let newRight = right.toString().split('').map((ele, idx) => `${ele} / ${Math.pow(10, idx + 1)}`).filter((item) => parseInt(item)).join(' + ');
+      //   // console.log(newRight);
+
+      //   console.log(newLeft.length === 0 ? [newRight].join(' + ') : [newLeft, newRight].join(" + "));
+
+      // }
+
+      // expandedForm(807.304)
+      // expandedForm(0.04)
+
+      // function number2words(n){
+
+      // }
+
+      // number2words(n)
+
+      // const numWords = {
+      //   0: 'zero',
+      //   1: 'one',
+      //   2: 'two',
+      //   3: 'three',
+      //   4: 'four',
+      //   5: 'five',
+      //   6: 'six',
+      //   7: 'seven',
+      //   8: 'eight',
+      //   9: 'nine',
+      //   10: 'ten',
+      //   11: 'eleven',
+      //   12: 'twelve',
+      //   13: 'thirteen',
+      //   14: 'fourteen',
+      //   15: 'fifteen',
+      //   16: 'sixteen',
+      //   17: 'seventeen',
+      //   18: 'eighteen',
+      //   19: 'nineteen',
+      //   20: 'twenty',
+      //   30: 'thirty',
+      //   40: 'forty',
+      //   50: 'fifty',
+      //   60: 'sixty',
+      //   70: 'seventy',
+      //   80: 'eighty',
+      //   90: 'ninety',
+      // };
+
+      // function number2words(n) {
+      //   if(n <= 20) {
+      //     return numWords[n]
+      //   }else if(n < 100) {
+      //     let tens = Math.floor(n / 10) * 10
+      //     let remainder = n % 10
+      //     return remainder === 0 ? numWords[tens] : numWords[tens] + '-' + numWords[remainder]
+      //   }else if(n >= 100 && n  < 1000) {
+      //     let hunds = Math.floor(n / 100)
+      //     let remainder = n % 100
+      //     return remainder === 0 ? numWords[hunds] + " " + 'hundred' : numWords[hunds] + " hundred" + " " + number2words(remainder)
+      //   }else if(n >= 1000 && n < 10000) {
+      //     let thous = Math.floor(n / 1000)
+      //     let remainder = n % 1000
+      //     return remainder === 0 ?  numWords[thous] + " thousand" : numWords[thous] + " thousand" + " " + number2words(remainder)
+      //   }
+      // }
+
+      // console.log(number2words(5));
+      // console.log(number2words(25));
+      // console.log(number2words(325));
+      // console.log(number2words(4325));
+
+      // console.log(5525 % 1000);
+
+      // let number2words = {
+      //   0: 'zero',
+      //   1: 'one',
+      //   2: 'two',
+      //   3: 'three',
+      //   4: 'four',
+      //   5: 'five',
+      //   6: 'six',
+      //   7: 'seven',
+      //   8: 'eight',
+      //   9: 'nine',
+      // }
+
+      // function numbersOfLetters(integer) {
+
+      //   let arr = []
+      //   while(integer !== 4) {
+      //     let word = integer.toString().split('').map((ele) => number2words[ele]).join('');
+
+      //     arr.push(word)
+      //     integer = word.length
+      //   }
+
+      //   arr.push('four')
+      //   return arr
+      //   // return numbersOfLetters()
+      // }
+
+      // console.log(numbersOfLetters(60));
+      // console.log(numbersOfLetters(1090));
+      // console.log(numbersOfLetters(1760));
+      // console.log(numbersOfLetters(90));
+
+      // function doMath(string) {
+      //   // //sorting number
+      //   // let arr = string.split(' ').sort((a, b) => {
+      //   //   return a.match(/[0-9]/) - b.match(/[0-9]/) //
+      //   // })
+
+      //   //sorting alphabetically
+      //   let arr = string.split(' ').sort((a, b) => {
+      //     let letterA = a.match(/[a-z]/)[0]
+      //     let letterB = b.match(/[a-z]/)[0]
+      //     return letterA.localeCompare(letterB)
+      //   }).map((ele) => ele.replace(/[a-zA-Z]/, ''))
+      //   console.log(arr);
+
+      //   let ops = ['+', '-', '*', '/']
+      //   let res = +arr[0]
+
+      //   console.log(res);
+
+      //   for(let i = 1; i < arr.length-; i++) {
+      //     let num = +arr[i]
+      //     let operator = ops[(i - 1) % ops.length]
+
+      //     if(operator === "+") {
+      //       res += num
+      //     }else if(operator === "-") {
+      //       res -= num
+      //     }else if(operator === "*") {
+      //       res *= num
+      //     }else if(operator === "/") {
+      //       res /= num
+      //     }
+      //   }
+
+      //   console.log(res);
+
+      // }
+
+      // function doMath(string) {
+      //   let sortedArr = string.split(' ').sort((a, b) => {
+      //     let letterA = a.match(/[a-zA-Z]/)[0]
+      //     let letterB = b.match(/[a-zA-Z]/)[0]
+      //     return letterA.localeCompare(letterB)
+      //   }).map((ele) => ele.replace(/[a-zA-Z]/g, ''))
+
+      //   // console.log(sortedArr);
+      //   let res = +sortedArr[0]
+      //   let operations = ['+', '-', '*', '/']
+
+      //   for(let i = 1; i < sortedArr.length; i++) {
+      //     let op = operations[(i - 1) % operations.length]
+      //     let num = +sortedArr[i]
+
+      //     if(op === "+") {
+      //       res += num
+      //     }else if(op === "-") {
+      //       res -= num
+      //     }else if(op === "*") {
+      //       res *= num
+      //     }else if(op === "/") {
+      //       res /= num
+      //     }
+      //   }
+
+      //   console.log(Math.round(res));
+
+      // }
+
+      // doMath("24z6 1x23 y369 89a 900b")
+      // doMath("24z6 1z23 y369 89z 900b")
+
+      // let arr = [
+      //   [4, 5, 7],
+      //   [3, 9, 1],
+      //   [7, 6, 2]
+      // ]
+
+      // function diagonal(arr) {
+      //   let length = arr.length
+      //   let newArr = []
+
+      //   while(arr[0].length > 0) {
+      //     arr.forEach((ele, idx) => {
+
+      //       if(ele.length === 0) return
+
+      //       if(idx >= length) {
+      //         newArr.push(ele.pop())
+      //       }
+      //     })
+      //     length--
+      //   }
+
+      //   console.log(newArr);
+
+      // }
+
+      // diagonal(arr)
+
+      // function arcLen(fn, range) {
+      //   let [start, end] = range
+      //   let segments = 1000
+      //   let step = (end - start) / 1000
+      //   let length = 0
+
+      //   for(let i = 0; i < segments; i++) {
+      //     let t1 = start + i * step
+      //     let t2 = t1 + step
+
+      //     let [x1, y1] = fn(t1)
+      //     let [x2, y2] = fn(t2)
+
+      //     let eachStep = Math.sqrt(Math.pow((x2-x1), 2) + Math.pow((y2-y1), 2))
+
+      //     length += eachStep
+      //   }
+
+      //   return length
+
+      // }
+
+      // function arcLen(fn, range) {
+
+      //   const [start, end] = range
+      //   const TotalSegs = 1000
+      //   const step = (end - start) / 1000
+      //   let length = 0
+
+      //   for(let i = 0; i < TotalSegs; i++) {
+      //     let t1 = start + i * step
+      //     let t2 = t1 + step
+
+      //     let [x1, y1] = fn(t1)
+      //     let [x2, y2] = fn(t2)
+
+      //     let allSteps = Math.hypot(x2-x1, y2, y1)
+
+      //     length += allSteps
+      //   }
+
+      //   return length
+      // }
+
+      // function count(n) {
+
+      //   if(n === 0 || n === 1) {
+      //     return 1
+      //   }
+
+      //   let digitCount = 0
+
+      //   for(let i = 1; i <= n; i++) {
+      //     digitCount += Math.log10(i)
+      //   }
+
+      //   return Math.floor(digitCount) + 1
+
+      // };
+      // console.log(Math.log10(1));
+      // console.log(Math.log10(2));
+      // console.log(Math.log10(3));
+      // console.log(Math.log10(4));
+      // console.log(Math.log10(5));
+      // console.log(Math.log10(9));
+      // console.log(Math.log10(10));
+      // console.log(Math.log10(11));
+      // console.log(Math.log10(20));
+      // console.log(Math.log10(200));
+
+      // console.log(count(5));
+      // console.log(count(4));
+
+
+      function decrypt(message, key) {
+        // console.log(message);
+
+        let wordCount = key.match(/\d+/)[0];
+        let arr = key.split('[')[1].match(/\d+/g);
+
+        // console.log(+wordCount, arr);
+
+        let wordLen = arr.length - wordCount;
+        // console.log(wordLen);
+        let wordStr = '';
+
+        // console.log(message.length);
+        let strArr = message.split('')
+        // console.log(strArr);
+        let originalWord = []
+        let msgArr = message.split('')
+        // while(wordLen > 0) {
+          
+          // originalWord.push(strArr.pop())
+          for(let i = 0; i < arr.length - wordCount; i++) {
+            // if(arr[i] === message[i]) {
+              // console.log(arr[i]);
+              // console.log();
+              wordStr += msgArr.at(arr[i])
+            // }
+          }
+          
+        //   wordLen--
+        // }
+        
+        // console.log(originalWord.join(''));
+        console.log(wordStr);
+        
+
+
+        // for(let i = 1;  i <= message.length; i++) {
+        //   console.log(message[i], i);
+          
+        // }
+       
+      }
+
+      // decrypt(
+      //   'snes@%jhrjsrawedoc',
+      //   'p10[18-17-16-15-14-13-12-11-10-9-8-7-6-5-4-3-2-1]',
+      // );
+      decrypt(
+        'psrteeto c',
+        'p0[7-8-1-9-2-5-10-3-6-4]',
+      );
+      
+    </script>
+  </body>
+</html>

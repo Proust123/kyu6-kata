@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+
+    // var object1 = {"Aardvark" : "arigatou", 13 : "100"};  
+    // var object2 = {"Korean" : "BBQ", "is" : "TASTY"}; 
+    // var object3 = {"Harry" : "has", "often" : "over", "heated" : "HATS"};
+    // var obj = [object1, object2, object3];
+
+
+    // function palindromicMnemonic(obj){
+    //     return obj.map((item) => {
+    //         let k = Object.keys(item).map((key) => key[0]).join('').toLowerCase()
+    //         // console.log(k);
+    //         let s = [...k].reduce((acc, curr) => {
+    //             acc[curr] = acc[curr] + 1 || 1
+    //             return acc
+    //         }, {})
+    //         // console.log(s);
+    //         let isPal = Object.values(s).filter((n) => n % 2 ).length < 2
+    //         // console.log(isPal);
+    //         let isMne = Object.keys(item).every((key, idx) => {
+    //             // console.log(Object.values(item));
+    //             return key[0].toLowerCase() === Object.values(item)[idx][0].toLowerCase()
+    //         })
+    //         console.log(isMne && isPal ? 'PalandromicMnemonic' : isMne ? 'Mnemonic' : isPal ? 'Palindromic' :  'Objectively objective object');
+    //         // console.log(isPal && isMne ? "Palindromic Mnemonic!" : isPal ? "Palindromic" : isMne ? "Mnemonic" : "Objectively objective object");
+    //     })
+    // }
+
+    // palindromicMnemonic(obj);
+
+
+    // var object1 = {"Aardvark" : "arigatou", 13 : "100"};  
+    // var object2 = {"Korean" : "BBQ", "is" : "TASTY"}; 
+    // var object3 = {"Harry" : "has", "often" : "over", "heated" : "HATS"};
+    // var obj = [object1, object2, object3];
+
+
+    // function palindromicMnemonic(obj) {
+    //     return obj.map((item, idx) => {
+    //         let allKeys = Object.keys(item).map((ele) => ele[0].toLowerCase()).join('')
+    //         // console.log(allKeys);
+    //         let count = [...allKeys].reduce((acc, curr) => {
+    //             acc[curr] = acc[curr] + 1 || 1
+    //             return acc
+    //         }, {})
+    //         // console.log(count);
+    //         let isPal = Object.values(count).filter((num) => num % 2).length < 2
+    //         // console.log(isPal);
+    //         let isMne = Object.keys(item).every((key, index) => key[0].toLowerCase() === Object.values(item)[index][0].toLowerCase())
+    //         console.log(isMne);
+            
+            
+    //     })
+    // }
+
+
+    // palindromicMnemonic(obj)
+
+
+        // let arr = ["BBC1", "MTV", "BBC1", "BBC2"]
+
+        // function redarr(arr) {
+        //     let obj = {}
+        //     let sorted = arr.sort()
+        //     // console.log(sorted);
+        //     let unique = []
+        //     for(let i = 0; i < sorted.length; i++) {
+        //         if(sorted.indexOf(sorted[i]) === i) {
+        //             unique.push(sorted[i])
+        //         }
+        //     }
+
+        //     unique.map((ele, idx) => {
+        //         obj[idx] = ele
+        //     })
+
+        //     console.log(obj);
+            
+            
+        // }
+
+        // redarr(arr) 
+
+
+        
+        // let str = "The Mitochondria is the powerhouse of the cell"
+        
+        // function sepStr(str) {
+        //     let result = []
+
+        //     let arr = str.split(' ')
+        //     console.log(arr);
+            
+        //     longestWord = 0
+        //     arr.forEach((word) => {
+        //         if(word.length > longestWord) {
+        //             longestWord = word.length
+        //         }
+        //     })
+
+        //     for(let i = 0; i < longestWord; i++) {
+        //         result.push(arr.map((word) => {
+        //            return word[i] || ''
+        //         }))
+        //     }
+
+        //     console.log([...result]);
+            
+            
+        // }
+
+        // sepStr(str)
+
+        // console.log([1,2,3,4,5].toString());
+        // console.log(['hello', 'testing', 123,].toString());
+
+
+
+
+        // Array.prototype.toString = function () {
+        //     return (
+        //         '[' + this.map((ele) => {
+        //             if(typeof ele === 'string') {
+        //                 return ("'" + ele.toString() + "'")
+        //             }else {
+        //                 return ele.toString()
+        //             }
+        //         }).join(',')
+        //         + ']'
+        //     )
+        // }
+        
+        
+        // Array.prototype.toString = function() {
+        //     return '[' + this.map(m => typeof m === 'string' ? "'" + m.toString() + "'" : m.toString()).join(',') + ']';
+        // }   
+        // console.log(['hello', 'testing', 123,].toString());
+
+
+        // String.prototype.characterCount = function (charsToCount) {
+
+        //     if(charsToCount === undefined) return undefined
+
+        //     const charObj = this.split('').reduce((acc, curr) => {
+        //         acc[curr] = (acc[curr] || 0) + 1
+        //         return acc
+        //     }, {})
+
+        //     if(typeof charsToCount === 'string'){
+        //         if(charsToCount.length === 1) {
+        //             // return charObj[charsToCount] || 0
+        //             console.log(charObj[charsToCount] || 0);
+                    
+        //         }else{
+        //             console.log(charsToCount.split('').map((char) => {
+        //                 return charObj[char] || 0   
+        //             }));
+                    
+        //         }
+        //     }else if(Array.isArray(charsToCount)) {
+        //         // return charsToCount.map((char) => charObj[char] || 0)
+        //         console.log(charsToCount.map((char) => charObj[char] || 0));
+        //     }
+        // }
+
+        
+        // String.prototype.characterCount = function (chars) {
+        //     console.log(chars ? [...chars].map((c) => this.split(c)) : '')
+            
+        // }
+
+
+        // ''.characterCount()
+        // 'lol'.characterCount('l')
+        // 'booop-booop-deee-doo-dooop'.characterCount('ado')
+        // 'booop-booop-deee-doo-dooop'.characterCount(['a','d','o','o','d','a'])
+        
+        // const arr1 = [1, 2, 2, 3, 5, 5, 9, 9, 9, 4]
+        // const arr2 = [1, 2, 3, 5, 9, 4, 7, 8, 11, 12]
+
+        // function removeDuplicate(arr) {
+        //     arr = arr.filter((ele, idx) => {
+        //         return arr.indexOf(ele) === idx 
+        //     })
+
+        //     console.log(arr);
+        // }
+
+        // removeDuplicate(arr1)
+
+        // const arr1 = [1, 2, 2, 3, 5, 5, 9, 9, 9, 4]
+        // const arr2 = [1, 2, 3, 5, 9, 4, 7, 8, 11, 12]
+
+        // function commonItems (arr1, arr2) {
+
+        //     newArr = arr1.filter((ele, idx) => {
+        //         return arr2.includes(ele)
+        //     })
+
+        //     console.log([...new Set(newArr)]);
+
+            
+        // }
+
+        // commonItems (arr1, arr2)
+
+
+        // function createMatrix(num) {
+        //     const matrix = []
+
+        //     for(let i = 0; i < num; i++) {
+        //         matrix[i] = []
+
+        //         for(let j = 0; j < num; j++) {
+        //             matrix[i][j] = i + j
+        //         }
+        //     }
+
+        //     return matrix
+        // }
+
+        // console.log(createMatrix(5));
+
+
+        // function array3D(num) {
+        //     const matrix = []
+
+        //     for(let i = 0; i < num; i++) {
+        //         matrix[i] = []
+
+        //         for(let j = 0; j < num; j++) {
+        //             matrix[i][j] = []
+                
+        //             for(let k = 0; k < num; k++) {
+        //                 matrix[i][j][k] = i + j + k
+        //             }
+        //         }
+        //     }
+
+        //     console.log(matrix);
+            
+        // }
+
+        // array3D(5)
+
+
+        // function makeSubArrays(arr, k) {
+        //     let newArr = []
+
+        //     for(let i = 0; i < arr.length; i+=k ) {
+        //         // console.log(i);
+        //         // console.log(arr[i]);
+        //         //slice() method string aur array dono mein hota hai
+        //         let sub = arr.slice(i, i + k)  //==(0, 3), (3, 6), (6, 9)
+        //         // console.log(sub);
+        //         newArr.push(sub)
+        //     }
+
+        //     console.log(newArr);
+        // }
+
+        // makeSubArrays([1,2,3,4,5,6,7,8], 3)
+
+
+
+        // function makeSubArrays(arr, k) {
+        //     let result = Array.from({length : k}, () => [])
+        //     // let result = Array.from({length : 100}, (_, idx) => idx + 1)
+        //     // console.log(result);
+        //     let index = 0
+
+        //     for(let i = 0; i < arr.length; i++) {
+        //         result[index].push(arr[i])
+        //         index = (index + 1) % k
+        //     }
+
+        //     console.log(result);
+            
+            
+        // }
+
+        // makeSubArrays([1,2,3,4,5,6,7,8,9], 5)
+
+
+        // function makeSubArrays(arr, k) {
+        //     let result = []
+        //     let subArraySize = Math.round(arr.length / k)
+        //     // let remainder = arr.length % k
+
+        //     console.log(subArraySize);
+        //     // console.log(remainder);
+
+        //     let start = 0
+
+        //     for(let i = 0; i < k - 1; i++) {
+        //         // console.log(i);
+        //         result.push(arr.slice(start, start + subArraySize))
+        //         start += subArraySize
+        //     } 
+
+        //     result.push(arr.slice(start))
+            
+        //     console.log(result);
+            
+        // }
+
+        // makeSubArrays([1,2,3,4,5,6,7,8,9], 5)
+
+
+        // function sumDigNthTerm(initval, patternl, nthterm) {
+        //     let sum = initval
+            
+
+        //     for(let i = 0; i < nthterm - 1; i++) {
+        //         sum += patternl[i % patternl.length]
+        //     }
+
+        //     console.log(sum.toString().split('').reduce((acc, curr) => acc + +curr, 0));
+        // }
+
+        // sumDigNthTerm(10, [1, 2, 3], 15)
+
+
+      //   function rootSum(n) {
+      //   let sum = 0
+
+      //   for(let i = 1; i <= Math.round(Math.sqrt(n)); i++) {
+      //     let root = Math.round(Math.pow(n, 1/i))
+
+      //     if(Math.pow(root, i) === n) {
+      //       sum += root
+      //     }
+      //   }
+
+      //   console.log(sum);
+      // }
+
+      // rootSum(27)
+
+      //Explaination :
+
+      // Initialization:
+
+      // sum = 0
+      // Logs 27 to the console.
+      // Loop Range:
+
+      // Math.round(Math.sqrt(27)) = 5 (since √27 ≈ 5.196)
+      // So, i will iterate from 1 to 5.
+      // Iterations:
+
+      // i = 1:
+
+      // root = Math.round(27^(1/1)) = Math.round(27) = 27
+      // Check: 27^1 = 27 → Valid
+      // sum += 27 → sum = 27
+      // i = 2:
+
+      // root = Math.round(27^(1/2)) = Math.round(5.196) = 5
+      // Check: 5^2 = 25 ≠ 27 → Invalid
+      // sum remains 27
+      // i = 3:
+
+      // root = Math.round(27^(1/3)) = Math.round(3) = 3
+      // Check: 3^3 = 27 → Valid
+      // sum += 3 → sum = 30
+      // i = 4:
+
+      // root = Math.round(27^(1/4)) = Math.round(2.279) = 2
+      // Check: 2^4 = 16 ≠ 27 → Invalid
+      // sum remains 30
+      // i = 5:
+
+      // root = Math.round(27^(1/5)) = Math.round(1.933) = 2
+      // Check: 2^5 = 32 ≠ 27 → Invalid
+      // sum remains 30
+      // Result:
+
+      // Returns 30
+      // Conclusion: The function correctly calculates rootSum(27) = 30.
+
+
+      // let arr = [ 'x', 'y' ]
+      // let keys = [
+      //       { x: 1, y: 1 },
+      //       { x: 2, y: 2 },
+      //       { x: 1, z: 1 },
+      //       { x: 1, y: 1, z: 3 }
+      //   ];
+      
+      // function duplicated(arr, keys) {
+      //   console.log(keys.filter((ele) => {
+      //     return keys.filter((item) => {
+      //       return arr.every((key) => ele[key] === item[key])
+      //     }).length > 1
+      //   }));
+      // }
+
+
+      // duplicated(arr, keys)
+
+
+      // let keys = [ 'x', 'y' ]
+      // let objs = [
+      //       { x: 1, y: 1 },
+      //       { x: 2, y: 2 },
+      //       { x: 1, z: 1 },
+      //       { x: 1, y: 1, z: 3 }
+      // ];
+
+      // function unique(objs, keys) {
+      //   //pehle aik set initialize karon ga --- set mein hmesha unique value aati hai
+      //   let uniqueObj = new Set()
+      //   console.log(objs.filter((obj) => {
+      //     //yahan pe each obj sy key ki value ko dhond k aik variable mein daal dn ga
+      //     let key = keys.map((key) => `${key} : ${obj[key]}`).join(',')
+      //     // console.log(key);
+
+      //     //yahan check ho rha hai k set mein key pehle sy hai tou wo object filter out ho jye ga
+      //     if(uniqueObj.has(key)){
+      //       return false
+      //     }else{ //agar set mein key nai hai tou wo add ho jye gi set mein
+      //       uniqueObj.add(key)
+      //       return true
+      //     }
+          
+      //   }));
+      // }
+
+      // function unique(objs, keys) {
+   
+      //   let seen = new Set()
+        
+      //   console.log(objs.filter((obj) => {
+          
+      //     let keyStr = keys.map((key) => `${key}:${obj[key]}`).join(',')
+
+      //     if(!seen.has(keyStr)) {
+      //       seen.add(keyStr)
+      //       return true
+      //     }
+      //     return false
+      //   }));
+        
+      // }
+      // unique(objs, keys)
+
+
+      // function count(string) {
+      //   let obj = {}
+      //   for(let i = 0; i < string.length; i++) {
+      //     obj[string[i]] = (obj[string[i]] || 0) + 1
+      //   }
+
+      //   console.log(obj);
+        
+      // }
+      
+      // count('aba')
+
+      
+      
+      // function order(words){
+      //   let arr = words.split(' ').sort((a, b) => {
+      //     const numA = a.match(/\d+/)
+      //     const numB = b.match(/\d+/)
+
+      //     return numA - numB
+      //   }).join(' ')
+
+      //   console.log(arr);//
+        
+      // }
+
+      // function order(words){
+      //   let arr = words.split(' ')
+      //   let sorted = []
+
+      //   for(let i = 0; i <= arr.length; i++) {
+      //     for(let j = 0; j < arr.length; j++) {
+      //       console.log(arr[j].indexOf(i));
+            
+      //       if(arr[j].indexOf(i) !== -1){
+      //         sorted.push(arr[j])
+      //       }
+      //     }
+      //   }
+      //   console.log(sorted);
+        
+      // }
+
+      // order("4of Fo1r g3ood pe6ople th5e the2")
+
+      // console.log('g3ood'.indexOf('o'));
+
+
+        //   String.prototype.characterCount = function (charsToCount) {
+        //     if(charsToCount === undefined) return undefined
+            
+        //     let freq = this.split('').reduce((acc, curr) => {
+        //         acc[curr] = (acc[curr] || 0) + 1
+        //         return acc
+        //     }, {})
+            
+        //     if(typeof charsToCount === 'string') {
+        //         if(charsToCount.length === 1) {
+        //         return freq[charsToCount] || 0
+        //         }else{
+        //         return charsToCount.split('').map((char) => {
+        //             return freq[char] || 0
+        //         })
+        //         }
+        //     }else if(Array.isArray(charsToCount)) {
+        //         return charsToCount.map((char) => {
+        //         return freq[char] || 0
+        //         })
+        //     }
+        //  };
+        
+        //  console.log('booop-booop-deee-doo-dooop'.characterCount(['a','d','o','o','d','a']));
+
+
+        // var i = 0;
+
+        // log = console.log;
+
+        // console.log = function(s){
+        // log(s);
+        // i = s.length;
+        // }
+
+        // function count(){
+        //     return i;
+        // }
+
+        // console.log(count("abcdefghijklmn"));
+
+
+
+        
+        // function solve(s) {
+        // const mod = 1000000007;
+        // const n = s.length;
+        
+        // // Precompute A[i] = number of letters > s[i]
+        // const A = [];
+        // for (let i = 0; i < n; i++) {
+        //     // s.charCodeAt(i) - 65 gives 0 for 'A', 25 for 'Z'
+        //     A.push(26 - (s.charCodeAt(i) - 65 + 1));
+        // }
+
+        // console.log(A);
+        
+        
+        // // Case 1: Only one differing position (L = R)
+        // let singles = 0;
+        // for (let i = 0; i < n; i++) {
+        //     singles = (singles + A[i]) % mod;
+        // }
+        
+        // console.log(singles);
+        
+
+        // // Case 2: Two or more differences (L < R)
+        // // We will accumulate contributions from left positions weighted by the gap factor.
+        // let pairs = 0;
+        // let cum = 0; // will accumulate sum_{i < j} A[i] * 26^(j-i-1)
+        
+        // // We iterate j from 0 to n-1.
+        // // For each new index j, it will act as the "R" position.
+        // // Before updating, cum is sum over i < j of A[i] * 26^(j-i-1).
+        // for (let j = 0; j < n; j++) {
+        //     // Add contribution from current j as right pivot
+        //     pairs = (pairs + A[j] * cum) % mod;
+            
+        //     // Update cum: shift the previous contributions by multiplying by 26,
+        //     // and then add the contribution of current index j (as a potential L for future indices).
+        //     cum = (26 * cum + A[j]) % mod;
+        // }
+        
+        // // The final answer is the sum of singles and pairs, modulo mod.
+        // return (singles + pairs) % mod;
+        // }
+
+
+        // const MOD = 10**9 + 7;
+        // function solve(s){
+        //     let acc = 0
+        //     let res = 0
+
+        //     for(let c of s) {
+        //         let d = 90 - c.charCodeAt(0)
+        //         res = (res + d*acc + d) % MOD
+        //         acc = (acc*26 + d) % MOD
+        //     }
+
+        //     return res
+        // }
+
+        // console.log(solve('ABC'));
+        // console.log(solve('XYZ'));
+
+
+        // function order(words){
+        //     let arr = words.split(' ')
+            
+        //     arr = arr.sort((a, b) => a.match(/\d/) - b.match(/\d/))
+        //     console.log(arr.join(' '));
+            
+        // }       
+    
+        // order("4of Fo1r pe6ople g3ood th5e the2")
+
+
+        // function noOrder(s) {
+        //     let parts = s.replace(/\s+/g, '').match(/\d+|./g)
+        //     let a = +parts.shift()
+
+        //     while(parts.length) {
+        //         let op = parts.shift()
+        //         let b = +parts.shift()
+
+        //         if(op === "+") {
+        //             a = a + b
+        //         }else if(op === "-") {
+        //             a = a - b
+        //         }else if(op === "*") {
+        //             a = a * b
+        //         }else if(op === "/") {
+        //             a = Math.floor(a / b)
+        //         }else if(op === "^") {
+        //             a = a ** b
+        //         }
+        //     }
+
+        //     console.log(isNaN(a) || Math.abs(a) === Infinity ? null : a);
+            
+        // }
+
+        // noOrder("2 + 3 - 4 * 1 ^ 3")
+
+
+        // let obj = {
+        //     name : 'random',
+        //     text : 'hello'
+        // }
+
+
+        // // let arr = [{...obj, id : +Math.random().toString().slice(2)}]
+        // // let arr = [{obj}]
+        // let arr = [{...obj}]
+
+        // console.log(arr);
+        
+
+        // function reverseWords(str) {
+        //     let arr = str.split(' ')
+            
+        //     arr = arr.map((word) => {
+        //         return word.split('').reverse().join('')
+        //     })
+
+        //     console.log(arr.join(' '));
+            
+        // }
+
+        // reverseWords("This is an example!")
+
+
+        // function reverse(str){
+        //     str = str.trim()
+        //     let arr = str.split(' ')
+        //     let newArr = []
+
+        //     arr.map((word, idx) => {
+        //         if(idx % 2 !== 0) {
+        //             newArr.push(word.split('').reverse().join(''))
+        //         }else {
+        //             newArr.push(word)
+        //         }
+        //     })           
+
+        //     console.log(newArr);
+            
+        // }
+
+        // reverse("  Reverse this string, please!  ")
+
+
+        // function solution(str){
+        //     let arr = []
+
+        //     for(let i = 0; i < str.length; i+=2) {
+        //         arr.push(str[i] + (str[i+1] || "_"))
+        //     }
+
+        //     console.log(arr);
+            
+        // }
+
+        // solution('abcde')
+
+        // function splitText(text, max) {
+        //     let output = []
+        //     text = text.trim()
+        //     // console.log(text);
+            
+        //     while(text.length > max) {
+        //         let breakIndex = text.lastIndexOf(" ", max)
+
+        //         if(breakIndex === -1) {
+        //             breakIndex = max
+        //         }
+
+        //         output.push(text.slice(0, breakIndex))
+        //         text = text.slice(breakIndex).trim()
+        //     }
+
+        //     if(text.length) {
+        //         output.push(text)
+        //     }
+
+        //     console.log(output);
+            
+        // }
+
+        // splitText(" Lorem ipsum dolor sit amet, consectetur adipiscing ", 15)
+
+
+        // var bot = {
+        //     message: function(msg) {
+        //         let arr = msg.toLowerCase().split(' ')
+        //         let nums = []
+        //         let operator = ''
+
+        //         arr.map((word) => {
+        //             if(!isNaN(word)) {
+        //                 nums.push(+word)
+        //             }else if(word === 'add' || word === 'subtract' || word === 'weather') {
+        //                 operator = word
+        //             }
+        //         })
+
+        //         if(operator === 'add') {
+        //             console.log(nums[0] + nums[1]);
+        //         }else if(operator === 'subtract') {
+        //             console.log(nums[1] - nums[0]);
+        //         }
+        //         if(msg.toLowerCase().includes('weather')) {
+        //             let match = msg.match(/\d{1,2}:\d{2}(am|pm)?/)
+        //             if(!match) return "raining"
+
+        //             let time = match[0]
+        //             let hour = +time.split(':')[0]
+        //             console.log(hour);
+                    
+        //             let isAM = time.includes('am')
+        //             let isPM = time.includes('pm')
+
+        //             if(isAM && hour === 12) hour = 0
+        //             if(isPM && hour !== 12) hour += 12
+
+        //             // let hour = +time.match(/\d{1,2}/)
+
+        //             // if(time.includes('am')) {
+        //             //     if(hour === 12) hour = 0
+        //             // }else if(time.includes('pm')) {
+        //             //     if(hour !== 12) hour += 12
+        //             // }
+
+        //             console.log(hour >= 6 && hour <= 18 ? "sunny" : "raining");
+                    
+        //         }
+        //     }
+        // };
+
+        // bot.message("What is the weather at 5:30pm?")
+        // bot.message("What is the weather at 10:30pm?")
+        // bot.message('Add 7 to 15.')
+        // bot.message('Subtract 7 from 15.')
+        
+
+        
+
+        // function calculate(str) {
+        //     let arr = str.split(' ')
+        //     let nums = []
+        //     let operators = ''
+            
+        //     arr.map((word) => {
+        //         // if(isNaN(word) === false) {
+        //         if(!isNaN(word)) {
+        //             nums.push(+word)
+        //         }else if(word === 'Add' || word === 'Subtract') {
+        //             operators = word
+        //         }
+        //     })
+
+        //     console.log(nums);
+
+        //     if(operators === 'Add') {
+        //         console.log(nums[0] + nums[1]);
+        //     }else if(operators === 'Subtract') {
+        //         console.log(nums[1] - nums[0]);
+        //     }
+            
+        // }
+
+        // calculate('Add 7 to 15.')
+        // calculate('Subtract 7 from 15.')
+        // calculate("What is the weather at 5:30pm?")
+
+
+        // function extractTime(str) {
+        //     let words = str.split(' ')
+            
+        //     console.log(words.find((word) => word.includes(":")));
+        // }
+
+        // extractTime("What is the weather at 5:30pm?")
+
+        // function showWeather(str) {
+        //     let match = str.match(/\d{1,2}:\d{2}(am|pm)?/)
+        //     // console.log(match);
+        //     if(!match) return "No time found"
+        //     let time = match[0]
+        //     // console.log(time);
+        //     if(time.includes("am")) {
+        //         hour = +time.match(/\d/)[0]
+        //         // console.log(hour);
+        //         if(hour = 12) {hour = 0}
+        //         time = hour
+        //     }else if(time.includes("pm")) {
+        //         hour = +time.match(/\d/)[0]
+        //         if(hour !== 12) hour += 12
+        //         time = hour
+        //     }else{
+        //         time = +time.match(/\d/)[0]
+        //     }
+
+        //     console.log(time >= 6 && time <= 18 ? "sunny" : "raining");
+            
+        // }
+
+        // // console.log(date.getHours().toLocaleString());
+        // showWeather("What is the weather at 5:30pm?")
+        
+
+        // var bot = {
+        //     message: function(msg) {
+
+        //         let addMatch = msg.match(/add (\d+) to (\d+)/)
+        //         // let addMatch = msg.match(/add \d+ to \d+/)
+        //         console.log(addMatch);
+        //         if(addMatch) {
+        //             // console.log(+addMatch[1] + +addMatch[2]);
+        //         }
+                
+        //         let subMatch = msg.match(/subtract (\d+) from (\d+)/)
+        //         console.log(subMatch);
+        //         if(subMatch) {
+        //             // console.log(Number(subMatch[2]) - Number(subMatch[1]));
+        //         }
+
+        //         let weatherMatch = msg.match(/what is the weather at (\d{1,2}):(\d{2})(am|pm)?/)
+        //         console.log(weatherMatch);
+        //         if(weatherMatch) {
+        //             let hour = parseInt(weatherMatch[1])
+        //             let period = weatherMatch[3]
+
+        //             if(period === 'am' && hour === 12){
+        //                 hour = 0
+        //             }else if(period === 'pm' && hour !== 12) {
+        //                 hour += 12
+        //             }
+
+        //             // console.log(hour >= 6 && hour <= 18 ? 'sunny' : 'raining');
+                    
+        //         }
+                
+        //     }
+        // };
+
+
+        // var bot = {
+        //     message: function(msg) {
+
+        //         let a,b,c
+
+        //         [_, a, b] = msg.match(/Add (\d+) to (\d+)/) || []
+        //         if(a&&b) console.log(+a + +b);
+                
+                
+        //         [_, a, b] = msg.match(/Subtract (\d+) from (\d+)/) || []
+        //         if(a&&b) console.log(b - a);
+                
+        //         [_, a, b, c] = msg.match(/What is the weather at (\d+):(\d+)(a|p)/) || []
+        //         if(a&&b&&c) {
+        //             a = +a + b/60 // minutes ko decimal mein convert kr diya, 6:30 == 6.5 ho gya, 30/60 === .5
+        //             // console.log(a);
+        //             if(c === 'p') a += 12
+        //             console.log(a);
+                    
+        //             console.log(a >= 6 || a <= 18 ? 'sunny' : 'raining');
+                    
+        //         }
+                
+                
+        //     }
+        // };
+
+        
+        
+        
+        // bot.message("What is the weather at 6:30pm?")
+        // bot.message("What is the weather at 10:30am?")
+        // bot.message('Add 9 to 21.')
+        // // bot.message('something Add 7 to 15.')
+        // bot.message('Subtract 7 from 15.')
+        // // bot.message('the Subtract 7 from 15.')
+        
+        // console.log(Math.round(1.6));
+        //1 bar contains 16 pieces
+        //group A : 20% -- no chocolate
+        //group B : 10% -- 1 piece after everyone has one
+        //group C : 5% -- 1 to start but upto 20 after everyone had one
+        //group D : 65% -- 1 piece only
+        //C & D are the basic requirements -- pehle inn dono mein divide ho gi chocolate
+        // agar 100 people hain tou
+        // group A : 20
+        // group B : 10
+        // group C : 5
+        // group D : 65
+        //matlab jitni bhi chocolate hai wo total 80 logon mein divide ho gi, but pehle
+        // group A k 65 aur group B k 5 mein
+
+        //step 1: calculate people on whom chocolate is going to be divided
+        //step 2 : calculate total pieces of all bars
+        // function chocolateSplit(people, bars) {
+        //     if(people === 0) {
+        //         console.log("Nobody here. Skedaddle. ");
+        //         return
+        //     }
+        //     if(!parseInt(people) || !parseInt(bars)) {
+        //         console.log("Error. We need numbers.");
+        //         return
+        //     }
+
+        //     let peopleA= Math.round(people * 20 /100)
+        //     // let cal = Math.round(people / 5)
+        //     // console.log(peopleA, cal);
+            
+        //     let peopleB= Math.round(people * 10 /100)
+        //     let peopleC= Math.round(people * 5 /100)
+        //     // console.log(peopleA, peopleB, peopleC);
+        //     let peopleD = people - (peopleA + peopleB + peopleC)
+        //     // console.log(peopleD);
+        //     people = people - peopleA
+        //     // console.log(people);
+            
+        //     totalPieces = bars * 16
+        //     console.log(totalPieces);
+            
+        //     let basic = peopleC + peopleD
+        //     totalPieces = totalPieces - basic
+
+        //     let totalPeople = peopleB+peopleC+peopleD
+
+        //     console.log(totalPeople % totalPieces);
+            
+
+        //     if(totalPieces > 0) {
+        //         totalPieces = totalPieces - peopleB
+        //     }
+
+            // let requiredBars = 0
+            // totalPieces = totalPieces - (peopleA + peopleB + peopleC)
+
+        //     if(totalPieces > 16) {
+        //         console.log([totalPeople, totalPieces, "That was too much chocolate!",]);
+        //     }else if(totalPieces < (peopleC+peopleD)) {
+        //         console.log([totalPeople, totalPieces, "You should buy more chocolate next time"]);
+        //     }
+        // }
+
+
+
+        // function chocolateSplit(people, bars) {
+        //     if(isNaN(people) || isNaN(bars)) {
+        //         console.log("Error. We need numbers.");
+        //         return
+        //     }
+        //     if(people === 0) {
+        //         console.log("Nobody here. Skedaddle.");
+        //         return
+        //     }
+
+        //     let a = Math.round(people * 20/100) 
+        //     let b = Math.round(people * 10/100) 
+        //     let c = Math.round(people * 5/100) 
+        //     let d = people - (a + b + c)
+
+        //     let minChoco = c + d
+        //     let maxChoco = b + c * 20 + d
+        //     let choco = bars * 16
+
+        //     if(choco < minChoco) {
+        //         console.log([choco, 0, "You should buy more chocolate", Math.round(minChoco/16) + 1]);
+        //     }else if(choco < b + c + d){
+        //         console.log([choco, 0]);
+        //     }else if(choco <= maxChoco + 16) {
+        //         console.log([b + c + d, Math.max(choco - maxChoco, 0)]);
+        //     }else{
+        //         console.log([b+c+d, choco-maxChoco, "More than enough chocolate", Math.round(maxChoco/16)+1]);
+                
+        //     }
+        // }
+
+        // if (choco < minChoco)
+        // return [choco, 0, 'You should buy more chocolate next time', Math.round(minChoco / 16) + 1]
+        // if (choco < b + c + d) return [choco, 0]
+        // if (choco <= maxChoco + 16) return [b + c + d, Math.max(choco - maxChoco, 0)]
+        // return [b + c + d, choco - maxChoco, 'That was too much chocolate!', Math.round(maxChoco / 16) + 1]
+
+        // chocolateSplit(1000, 'aa')
+        // chocolateSplit(8, 10)
+        // chocolateSplit(1000, 10)
+        // chocolateSplit(0, 10)
+
+        // console.log(Math.max((15-50), 25));
+        
+
+        // console.log(Math.round(70/16) + 1);
+        
+
+
+        // function redarr(arr) {
+        //     let newArr = new Set(arr)
+        //     let count = 0
+        //     let sorted = [...newArr].sort().reduce((acc, curr) => {
+        //         acc[count] = curr
+        //         count++
+        //         return acc
+        //     }, {})
+
+        //     console.log(sorted);
+            
+        // }
+
+        // redarr(["MTV", "BBC1", "BBC2"])
+        // redarr(["BBC1", "BBC1", "BBC2", "MTV"])
+
+
+        // function sepStr(str) {
+        //     let arr = str.split(' ')
+        //     let res = []
+        //     let longestWord = 0
+        //     for(let word of arr) {
+        //         if(word.length > longestWord) {
+        //             longestWord = word.length
+        //         }
+        //     }
+        //     // console.log(longestWord);
+        //     for(let i = 0; i < longestWord; i++) {
+        //         res.push(arr.map((word) => word[i] || ''))
+        //     }
+            
+        //     console.log(res);
+            
+        // }
+
+        // sepStr("The Mitochondria is the powerhouse of the cell")
+
+
+        
+        // function sumDigNthTerm(initval, patternl, nthterm) {
+        //     let sum = initval
+
+        //     for(let i = 0; i < nthterm - 1; i++) {
+        //         console.log(sum += patternl[i % patternl.length]);
+        //     }
+
+        //     console.log(sum.toString().split('').reduce((acc, curr) => +acc + +curr, 0));
+            
+        // }
+
+
+        // sumDigNthTerm(10, [2, 1, 3], 6)
+
+
+
+        // function digitalRoot(n) {
+        //     if(n < 10) console.log(n);
+            
+
+        //     console.log(digitalRoot(n.toString().split('').reduce((acc, curr) => +acc + +curr, 0)));
+            
+        // }
+
+        // digitalRoot(456)
+
+
+
+        // function sumOfSums(n) {
+            
+        //     // let sum = 0
+        //     // for(let i = 1; i < n; i++) {
+        //     //     sum += n
+        //     // }
+        //     // console.log(sum);
+                
+        //     n = BigInt(n)
+
+        //     let total = (n * (n + 1n) * (n + 2n)) / 6n
+        //     //natural(whole number if 0 is included) ka sum is formula sy nikala ja sakta hai
+        //     let sum = (total * (total + 1n)) / 2n
+            
+        //     console.log(sum);
+            
+        // }
+
+        
+        // sumOfSums(3)
+
+        // let n = 8
+       
+        // console.log(n.toString(2));
+        
+        // n = '1000'
+
+        // console.log(parseInt(n, 2).toString(10));
+        
+        // console.log(1 << 2);
+    
+
+        
+        let keys = ['x', 'y']
+        let arr = [
+            { x: 1, y: 1 },
+            { x: 2, y: 2 },
+            { x: 1, z: 1 },
+            { x: 1, y: 1, z: 3 },
+        ]
+        
+        // function duplicated(arr, keys) {
+
+        //     console.log(arr.filter((ele) => {
+        //         return arr.filter((item) => {
+        //            return keys.every((key) => ele[key] === item[key])
+        //         }).length > 1
+        //     }));
+            
+
+        // }
+
+        function duplicated(arr, keys) {
+            let map = new Map()
+
+            for(let item of arr) {
+                const key = keys.map((k) => item[k]).join('|')
+                console.log(key);
+                map.set(key, (map.get(key) || 0) + 1)
+            }
+
+            // console.log(map);
+
+            return arr.filter((item) => {
+                let uniqueKeys = keys.map((k) => item[k]).join('|')
+                // console.log(uniqueKeys);
+                let dup = (map.get(uniqueKeys) > 1);
+                console.log(dup);
+                
+            })
+            
+        }
+        
+        duplicated(arr, keys)
+
+    </script>
+    
+</body>
+</html>
+
+
