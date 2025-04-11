@@ -1161,59 +1161,67 @@
       // console.log(count(5));
       // console.log(count(4));
 
+      // function decrypt(message, key) {
+      //   // console.log(message);
+
+      //   let wordCount = Number(key.match(/\d+/)[0]);
+      //   let arr = key.split('[')[1].match(/\d+/g).map((num) => +num);
+      //   // console.log(wordCount);
+      //   // console.log(arr);
+      //   let wordLength = message.length - wordCount
+      //   // console.log(wordLength);
+
+      //   let word = ''
+
+      //   for(let pos of arr.slice(-wordLength)) {
+      //     // console.log(pos);
+
+      //     word += message[pos - 1]
+      //   }
+
+      //   console.log(word);
+
+      // }
+
+      // function decrypt(message, key) {
+      //   const wordCount = Number(key.match(/^p(\d+)/)[1]);
+      //   const allPositions = key
+      //     .match(/\[(.*?)\]/)[1]
+      //     .split('-')
+      //     .map(Number);
+      //   const wordLength = message.length - wordCount;
+
+      //   // Take the last `wordLength` positions as given, no reversing
+      //   const positions = allPositions.slice(-wordLength);
+
+      //   let word = '';
+      //   for (let pos of positions) {
+      //     word += message[pos - 1]; // 1-based index
+      //   }
+
+      //   console.log(word);
+
+      // }
 
       function decrypt(message, key) {
-        // console.log(message);
+        // 1. Extract positions from key
+        const positions = key
+          .match(/\[(.*?)\]/)[1] // get "18-17-16-..."
+          .split('-') // ['18', '17', ...]
+          .map((n) => Number(n)); // convert to numbers
 
-        let wordCount = key.match(/\d+/)[0];
-        let arr = key.split('[')[1].match(/\d+/g);
-
-        // console.log(+wordCount, arr);
-
-        let wordLen = arr.length - wordCount;
-        // console.log(wordLen);
-        let wordStr = '';
-
-        // console.log(message.length);
-        let strArr = message.split('')
-        // console.log(strArr);
-        let originalWord = []
-        let msgArr = message.split('')
-        // while(wordLen > 0) {
-          
-          // originalWord.push(strArr.pop())
-          for(let i = 0; i < arr.length - wordCount; i++) {
-            // if(arr[i] === message[i]) {
-              // console.log(arr[i]);
-              // console.log();
-              wordStr += msgArr.at(arr[i])
-            // }
-          }
-          
-        //   wordLen--
-        // }
+        // 2. Map positions to characters from message (1-based index)
+        let word = positions.map((pos) => message[pos - 1]).join('');
+      
+        console.log(word);
         
-        // console.log(originalWord.join(''));
-        console.log(wordStr);
-        
-
-
-        // for(let i = 1;  i <= message.length; i++) {
-        //   console.log(message[i], i);
-          
-        // }
-       
       }
 
-      // decrypt(
-      //   'snes@%jhrjsrawedoc',
-      //   'p10[18-17-16-15-14-13-12-11-10-9-8-7-6-5-4-3-2-1]',
-      // );
       decrypt(
-        'psrteeto c',
-        'p0[7-8-1-9-2-5-10-3-6-4]',
+        'snes@%jhrjsrawedoc',
+        'p10[18-17-16-15-14-13-12-11-10-9-8-7-6-5-4-3-2-1]',
       );
-      
+      decrypt('psrteeto c', 'p0[7-8-1-9-2-5-10-3-6-4]');
     </script>
   </body>
 </html>
