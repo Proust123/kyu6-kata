@@ -1162,66 +1162,62 @@
       // console.log(count(4));
 
       // function decrypt(message, key) {
-      //   // console.log(message);
-
-      //   let wordCount = Number(key.match(/\d+/)[0]);
-      //   let arr = key.split('[')[1].match(/\d+/g).map((num) => +num);
+      //   // console.log(message.length);
+        
       //   // console.log(wordCount);
-      //   // console.log(arr);
-      //   let wordLength = message.length - wordCount
-      //   // console.log(wordLength);
-
-      //   let word = ''
-
-      //   for(let pos of arr.slice(-wordLength)) {
-      //     // console.log(pos);
-
-      //     word += message[pos - 1]
+      //   // console.log(positions);
+      //   const ordered = []
+      //   const rubbish = Number(key.match(/\d+/)[0])
+      //   const positions = key.split('[')[1].match(/\d+/g).map((num) => +num)
+      //   console.log(rubbish, positions);
+        
+      //   for(let i = 0; i < message.length; i++) {
+      //     //yahan positions[i] e.g positions[0] pe 18 hai, positions[1] pe 17 and so on ==>> message[positions[0]]=message[18] ==>> message zero-based
+      //     //hai tou 18 pe undefined aaye ga jb message[18 - 1]=message[17] ho tou 0 sy start kr k message k 17 pe 'c' hai aur 
+      //     //16 pe 'o' and so on
+      //     // ordered[i] = message[positions[i] - 1]
+      //     //push method easy hai to follow
+          
+      //     ordered.push(message[positions[i] - 1])
       //   }
-
-      //   console.log(word);
-
+        
+      //   console.log(ordered.slice(0, ordered.length > 0 ? ordered.length - rubbish : ordered.length).join(''));
+        
+        
       // }
 
-      // function decrypt(message, key) {
-      //   const wordCount = Number(key.match(/^p(\d+)/)[1]);
-      //   const allPositions = key
-      //     .match(/\[(.*?)\]/)[1]
-      //     .split('-')
-      //     .map(Number);
-      //   const wordLength = message.length - wordCount;
-
-      //   // Take the last `wordLength` positions as given, no reversing
-      //   const positions = allPositions.slice(-wordLength);
-
-      //   let word = '';
-      //   for (let pos of positions) {
-      //     word += message[pos - 1]; // 1-based index
-      //   }
-
-      //   console.log(word);
-
-      // }
-
-      function decrypt(message, key) {
-        // 1. Extract positions from key
-        const positions = key
-          .match(/\[(.*?)\]/)[1] // get "18-17-16-..."
-          .split('-') // ['18', '17', ...]
-          .map((n) => Number(n)); // convert to numbers
-
-        // 2. Map positions to characters from message (1-based index)
-        let word = positions.map((pos) => message[pos - 1]).join('');
+      // console.log(18 == '18');
+      // console.log(18 === '18');
       
-        console.log(word);
+
+
+      // decrypt(
+      //   'snes@%jhrjsrawedoc',
+      //   'p10[18-17-16-15-14-13-12-11-10-9-8-7-6-5-4-3-2-1]',
+      // );
+      // decrypt('psrteeto c', 'p0[7-8-1-9-2-5-10-3-6-4]');
+
+
+
+
+      var encryptThis = function(text) {
+        let secLetter = text[1]
+        
+        let word = text.replace(text[1], text[text.length - 1])
+        console.log(word[word.length - 1]);
+        
+        console.log(secLetter);
+
+        let newWord = word.replace(word[word.length - 1], secLetter)
+        console.log(newWord);
         
       }
 
-      decrypt(
-        'snes@%jhrjsrawedoc',
-        'p10[18-17-16-15-14-13-12-11-10-9-8-7-6-5-4-3-2-1]',
-      );
-      decrypt('psrteeto c', 'p0[7-8-1-9-2-5-10-3-6-4]');
+
+      encryptThis("Hello") // "72olle"
+      // encryptThis("good") // "103doo"
+      // encryptThis("hello world") // "104olle 119drlo"
+
     </script>
   </body>
 </html>
