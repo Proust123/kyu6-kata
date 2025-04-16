@@ -1201,22 +1201,32 @@
 
 
       var encryptThis = function(text) {
-        let secLetter = text[1]
+        if(text.length < 2) return text
         
-        let word = text.replace(text[1], text[text.length - 1])
-        console.log(word[word.length - 1]);
+        let arr = text.split(' ')
         
-        console.log(secLetter);
+        
+        // console.log(arr.join(''));
+        
+        arr = arr.map((word) => {
+          let newArr = word.split('')
+          for(let i = 0; i < newArr.length; i++) {
+            // newArr[0] = newArr.charCodeAt(0)
+            let temp = newArr[1]
+            newArr[1] = newArr[newArr.length - 1]
+            newArr[newArr.length - 1] = temp
+          }
+          return newArr.join('')
+        })
 
-        let newWord = word.replace(word[word.length - 1], secLetter)
-        console.log(newWord);
+        console.log(arr);
         
       }
 
 
-      encryptThis("Hello") // "72olle"
+      // encryptThis("Hello") // "72olle"
       // encryptThis("good") // "103doo"
-      // encryptThis("hello world") // "104olle 119drlo"
+      encryptThis("hello world") // "104olle 119drlo"
 
     </script>
   </body>
