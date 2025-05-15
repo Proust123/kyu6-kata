@@ -1163,33 +1163,30 @@
 
       // function decrypt(message, key) {
       //   // console.log(message.length);
-        
+
       //   // console.log(wordCount);
       //   // console.log(positions);
       //   const ordered = []
       //   const rubbish = Number(key.match(/\d+/)[0])
       //   const positions = key.split('[')[1].match(/\d+/g).map((num) => +num)
       //   console.log(rubbish, positions);
-        
+
       //   for(let i = 0; i < message.length; i++) {
       //     //yahan positions[i] e.g positions[0] pe 18 hai, positions[1] pe 17 and so on ==>> message[positions[0]]=message[18] ==>> message zero-based
-      //     //hai tou 18 pe undefined aaye ga jb message[18 - 1]=message[17] ho tou 0 sy start kr k message k 17 pe 'c' hai aur 
+      //     //hai tou 18 pe undefined aaye ga jb message[18 - 1]=message[17] ho tou 0 sy start kr k message k 17 pe 'c' hai aur
       //     //16 pe 'o' and so on
       //     // ordered[i] = message[positions[i] - 1]
       //     //push method easy hai to follow
-          
+
       //     ordered.push(message[positions[i] - 1])
       //   }
-        
+
       //   console.log(ordered.slice(0, ordered.length > 0 ? ordered.length - rubbish : ordered.length).join(''));
-        
-        
+
       // }
 
       // console.log(18 == '18');
       // console.log(18 === '18');
-      
-
 
       // decrypt(
       //   'snes@%jhrjsrawedoc',
@@ -1197,37 +1194,313 @@
       // );
       // decrypt('psrteeto c', 'p0[7-8-1-9-2-5-10-3-6-4]');
 
+      // var encryptThis = function(text) {
+      //   if(text.length < 2) console.log(String(text.charCodeAt(0)));
 
+      //   let arr = text.split(' ')
 
+      //   // console.log(arr);
 
-      var encryptThis = function(text) {
-        if(text.length < 2) return text
-        
-        let arr = text.split(' ')
-        
-        
-        // console.log(arr.join(''));
-        
-        arr = arr.map((word) => {
-          let newArr = word.split('')
-          for(let i = 0; i < newArr.length; i++) {
-            // newArr[0] = newArr.charCodeAt(0)
-            let temp = newArr[1]
-            newArr[1] = newArr[newArr.length - 1]
-            newArr[newArr.length - 1] = temp
+      //   arr = arr.map((word) => {
+      //     let newArr = word.split('')
+      //     console.log(newArr);
+
+      //     for(let i = 0; i < newArr.length; i++) {
+
+      //         let temp = newArr[1]
+
+      //         newArr[1] = newArr[newArr.length - 1]
+      //         newArr[newArr.length - 1] = temp
+
+      //     }
+      //     return newArr.join('')
+      //   })
+
+      //   arr = arr.map((ele) => {
+      //     return ele[0].charCodeAt(0) + ele.slice(1)
+      //   })
+
+      //   console.log(arr.join(' ').toString());
+
+      // }
+
+      // var encryptThis = function(text) {
+      //   if(!text) return ''
+
+      //   let arr = text.split(' ')
+
+      //   arr = arr.map((word) => {
+      //     if(word.length === 1) {
+      //       console.log(word.charCodeAt(0));
+      //     }
+
+      //     let chars = word.split('')
+      //     let firstChar = word[0].charCodeAt()
+
+      //     if(word.length === 2) {
+      //       console.log(firstChar + word[1]);
+      //     }
+
+      //     let temp = chars[1]
+      //     chars[1] = chars[chars.length - 1]
+      //     chars[chars.length - 1] = temp
+
+      //     chars[0] = firstChar
+
+      //     return chars.join('')
+      //   })
+
+      //   console.log(arr.join(' '));
+
+      // }
+
+      // encryptThis("Hello") // "72olle"
+      // encryptThis("A") // "65"
+      // encryptThis("good") // "103doo"
+      // encryptThis("hello world") // "104olle 119drlo"
+      // encryptThis("A wise old owl lived in an oak")
+
+      // function decipherThis(str) {
+      //   if (!str) return '';
+
+      //   let arr = str.split(' ');
+
+      //   arr = arr.map((word) => {
+      //     let num = word.match(/\d+/)[0];
+      //     let restMatch = word.match(/[a-zA-Z]/g)
+      //     let rest = restMatch ? restMatch.join('') : ''
+
+      //     let firstChar = String.fromCharCode(num);
+
+      //     let restArr = rest.split('');
+
+      //     let temp = restArr[0];
+
+      //     restArr[0] = restArr[restArr.length - 1];
+      //     restArr[restArr.length - 1] = temp;
+
+      //     return firstChar + restArr.join('');
+      //   });
+
+      //   console.log(arr.join(' '));
+
+      //   return arr.join(' ');
+      // }
+
+      // decipherThis('72olle 103doo 100ya');
+      // decipherThis('72')
+
+      // function encrypt(text, rule) {
+      //   let arr = text.split('')
+      //   console.log(arr);
+
+      //   arr = arr.map((char) => {
+      //     return char.split('').map((letter) => {
+      //       return (letter.charCodeAt(0) + rule) % 256
+      //     })
+      //   })
+
+      //   arr = arr.map((nums) => {
+      //     return nums.map((num) => {
+      //       return String.fromCharCode(num)
+      //     }).join('')
+      //   }).join('')
+
+      //   console.log(arr);
+
+      // };//
+
+      // encrypt("a", 1)
+      // encrypt("please encrypt me", 2) //rngcug\"gpet{rv\"og //rngcug gpet{rv og
+
+      // function solve(n) {
+      //   let lastRow = [1]
+      //   console.log(lastRow);
+
+      //   for(let i = 1; i < n; i++) {
+      //     let newRow = [1]
+
+      //     for(let j = 1; j < lastRow.length; j++) {
+      //       newRow.push(lastRow[j] + newRow[j - 1])
+      //     }
+
+      //     newRow.push(newRow[newRow.length - 1])
+
+      //     console.log(newRow);
+
+      //     lastRow = newRow
+      //   }
+
+      //   console.log(lastRow.reduce((acc, curr) => acc + curr, 0));
+
+      // }
+
+      // solve(5)
+
+      // function isTriangleNumber(number) {
+      //   // let count = new Array(number).fill(0)
+      //   // let count = Array.from({length: number}, () => [])
+
+      //   let step = 0
+      //   let sum = 0
+
+      //   while(sum < number) {
+      //     step++
+
+      //     sum += step
+      //   }
+
+      //   console.log(sum === number);
+
+      // }
+
+      // isTriangleNumber(1)
+      // isTriangleNumber(9)
+      // isTriangleNumber(10)
+
+      // function stringExpansion(s) {
+
+      //   if(!s.match(/\d+/)) {
+      //     console.log(s);
+      //     return
+      //   }else if(!s.match(/[a-zA-Z]/g)) {
+      //     console.log("");
+      //     return
+      //   }
+
+      //   let arr = []
+
+      //   for(let i = 0; i < s.length; i+=2) {
+      //     arr.push(s[i+1].repeat(s[i]))
+      //   }
+
+      //   console.log(arr.join(''));
+
+      // }
+
+      // function stringExpansion(s){
+      //   let multiplier = 1
+
+      //   console.log(s.split('').map((char) => {
+      //     if(!isNaN(char)) {
+      //       num = +char
+      //       // return ''
+      //     }else{
+      //       return char.repeat(num)
+      //     }
+      //   }).join(''));
+
+      // }
+
+      // stringExpansion("3D2a5d2f") // "DDDaadddddff"
+      // stringExpansion("Dadf")
+      // stringExpansion("33333")
+
+      function solve(n) {
+        const str = n.toString();
+
+        function countMoves(str, end) {
+          let moves = 0;
+          let current = str;
+
+          // Try to match the last digit of the ending
+          let lastDigit = end[1];
+          let lastIndex = current.lastIndexOf(lastDigit);
+          if (lastIndex === -1) return -1;
+          moves += current.length - 1 - lastIndex;
+          current = current.slice(0, lastIndex) + current.slice(lastIndex + 1);
+
+          // Try to match the first digit of the ending
+          let firstDigit = end[0];
+          let firstIndex = current.lastIndexOf(firstDigit);
+          if (firstIndex === -1) return -1;
+          moves += current.length - 1 - firstIndex;
+
+          // Handling leading zeros issue
+          const unLeadingZero = (s) =>
+            s.length &&
+            ((i) => (i + 1 ? i : Infinity))(
+              [].findIndex.call(s, (c) => c !== '0'),
+            );
+          moves += unLeadingZero(current);
+
+          return moves;
+        }
+
+        // Check if already divisible by 25
+        if (n % 25 === 0) return 0;
+
+        // Possible endings for divisibility by 25
+        const possibleEndings = ['00', '25', '50', '75'];
+
+        let minMoves = Infinity;
+
+        // Check all possible endings and calculate the minimum moves
+        for (const end of possibleEndings) {
+          const moves = countMoves(str, end);
+          if (moves !== -1) {
+            minMoves = Math.min(minMoves, moves);
           }
-          return newArr.join('')
-        })
+        }
 
-        console.log(arr);
-        
+        return minMoves === Infinity ? -1 : minMoves;
+      }
+
+      
+
+      function solve(n) {
+        let str = n.toString()
+
+        function countMoves(str, end) {
+          let curr = str
+          let moves = 0
+
+          let lastDigit = end[1]
+          let lastIndex = curr.lastIndexOf(lastDigit)
+          if(lastIndex === -1) return -1
+          moves = curr.length - 1 - lastIndex
+          curr = curr.slice(0, lastIndex) + curr.slice(lastIndex+1)
+
+          let firstDigit = end[0]
+          let firstIndex = curr.lastIndexOf(firstDigit)
+          if(firstDigit === -1) return -1
+          moves += curr.length - 1 - firstIndex
+
+          function unleadingZeros(s) {
+            for(let i = 0; i < s.length; i++) {
+              if(s !== -1) return i
+
+              return Infinity
+            }
+          }
+
+          moves += unleadingZeros(curr)
+
+          return moves
+        }
+
+        if(n % 25 === 0) return 0
+
+        let possibleEndings = ['00', '25', '50', '75']
+
+        let minMoves = Infinity
+
+        for(let end of possibleEndings) {
+          let moves = countMoves(str, end) 
+          if(moves !== -1) {
+            minMoves = Math.min(minMoves, moves)
+          }
+        }
+
+        return minMoves === -1 ? Infinity : minMoves
       }
 
 
-      // encryptThis("Hello") // "72olle"
-      // encryptThis("good") // "103doo"
-      encryptThis("hello world") // "104olle 119drlo"
 
+      console.log(solve(521));
+
+
+      
     </script>
   </body>
 </html>
