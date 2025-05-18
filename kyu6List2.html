@@ -1396,48 +1396,186 @@
       // stringExpansion("Dadf")
       // stringExpansion("33333")
 
+      // function solve(n) {
+      //   const str = n.toString();
+
+      //   function countMoves(str, end) {
+      //     let moves = 0;
+      //     let current = str;
+
+      //     // Try to match the last digit of the ending
+      //     let lastDigit = end[1];
+      //     let lastIndex = current.lastIndexOf(lastDigit);
+      //     if (lastIndex === -1) return -1;
+      //     moves += current.length - 1 - lastIndex;
+      //     current = current.slice(0, lastIndex) + current.slice(lastIndex + 1);
+
+      //     // Try to match the first digit of the ending
+      //     let firstDigit = end[0];
+      //     let firstIndex = current.lastIndexOf(firstDigit);
+      //     if (firstIndex === -1) return -1;
+      //     moves += current.length - 1 - firstIndex;
+
+      //     // Handling leading zeros issue
+      //     const unLeadingZero = (s) =>
+      //       s.length &&
+      //       ((i) => (i + 1 ? i : Infinity))(
+      //         [].findIndex.call(s, (c) => c !== '0'),
+      //       );
+      //     moves += unLeadingZero(current);
+
+      //     return moves;
+      //   }
+
+      //   // Check if already divisible by 25
+      //   if (n % 25 === 0) return 0;
+
+      //   // Possible endings for divisibility by 25
+      //   const possibleEndings = ['00', '25', '50', '75'];
+
+      //   let minMoves = Infinity;
+
+      //   // Check all possible endings and calculate the minimum moves
+      //   for (const end of possibleEndings) {
+      //     const moves = countMoves(str, end);
+      //     if (moves !== -1) {
+      //       minMoves = Math.min(minMoves, moves);
+      //     }
+      //   }
+
+      //   return minMoves === Infinity ? -1 : minMoves;
+      // }
+
+      // function solve(n) {
+      //   let str = n.toString()
+
+      //   function countMoves(str, end) {
+      //     let curr = str
+      //     let moves = 0
+
+      //     let lastDigit = end[1]
+      //     let lastIndex = curr.lastIndexOf(lastDigit)
+      //     if(lastIndex === -1) return -1
+      //     moves = curr.length - 1 - lastIndex
+      //     curr = curr.slice(0, lastIndex) + curr.slice(lastIndex+1)
+
+      //     let firstDigit = end[0]
+      //     let firstIndex = curr.lastIndexOf(firstDigit)
+      //     if(firstDigit === -1) return -1
+      //     moves += curr.length - 1 - firstIndex
+
+      //     function unleadingZeros(s) {
+      //       for(let i = 0; i < s.length; i++) {
+      //         if(s !== -1) return i
+
+      //         return Infinity
+      //       }
+      //     }
+
+      //     moves += unleadingZeros(curr)
+
+      //     return moves
+      //   }
+
+      //   if(n % 25 === 0) return 0
+
+      //   let possibleEndings = ['00', '25', '50', '75']
+
+      //   let minMoves = Infinity
+
+      //   for(let end of possibleEndings) {
+      //     let moves = countMoves(str, end)
+      //     if(moves !== -1) {
+      //       minMoves = Math.min(minMoves, moves)
+      //     }
+      //   }
+
+      //   return minMoves === -1 ? Infinity : minMoves
+      // }
+
+      // function solve(n) {
+      //   let str = n.toString()
+
+      //   function countMoves(str, end) {
+      //     let curr = str
+      //     let moves = 0
+
+      //     let lastDigit = end[1]
+      //     let lastIndex = curr.indexOf(lastDigit)
+      //     if(lastIndex === -1) return -1
+      //     moves += curr.length - 1 - lastIndex
+      //     curr = curr.slice(0,lastIndex) + curr.slice(lastIndex+1)
+
+      //     let firstDigit = end[0]
+      //     let firstIndex = curr.lastIndexOf(firstDigit)
+      //     if(firstIndex === -1) return -1
+      //     moves += curr.length - 1 - firstIndex
+
+      //     function unleadingZeros(s) {
+      //       for(let i = 0; i < s.length; i++) {
+      //         if(s[i] !== 0) return i
+      //       }
+
+      //       return Infinity
+      //     }
+
+      //     moves += unleadingZeros(curr)
+
+      //     return moves
+      //   }
+
+      //   if(n % 25 === 0) return 0
+
+      //   const possibleEndings = ['00', '25', '50', '75']
+
+      //   let minMoves = Infinity
+
+      //   for(let end of possibleEndings) {
+      //     let moves = countMoves(str, end)
+      //     if(moves !== - 1) {
+      //       minMoves = Math.min(minMoves, moves)
+      //     }
+      //   }
+
+      //   return minMoves === Infinity ? -1 : minMoves
+      // }
+
       function solve(n) {
-        const str = n.toString();
+        let str = n.toString();
 
         function countMoves(str, end) {
           let moves = 0;
           let current = str;
 
-          // Try to match the last digit of the ending
           let lastDigit = end[1];
           let lastIndex = current.lastIndexOf(lastDigit);
           if (lastIndex === -1) return -1;
           moves += current.length - 1 - lastIndex;
           current = current.slice(0, lastIndex) + current.slice(lastIndex + 1);
 
-          // Try to match the first digit of the ending
           let firstDigit = end[0];
           let firstIndex = current.lastIndexOf(firstDigit);
           if (firstIndex === -1) return -1;
           moves += current.length - 1 - firstIndex;
 
-          // Handling leading zeros issue
-          const unLeadingZero = (s) =>
-            s.length &&
-            ((i) => (i + 1 ? i : Infinity))(
-              [].findIndex.call(s, (c) => c !== '0'),
-            );
-          moves += unLeadingZero(current);
+          function unleadingZeroes(s) {
+            for (let i = 0; i < s.length; s++) {
+              if (s[i] !== 0) return i;
+            }
+            return Infinity;
+          }
 
-          return moves;
+          return (moves += unleadingZeroes(current));
         }
 
-        // Check if already divisible by 25
         if (n % 25 === 0) return 0;
 
-        // Possible endings for divisibility by 25
         const possibleEndings = ['00', '25', '50', '75'];
 
         let minMoves = Infinity;
 
-        // Check all possible endings and calculate the minimum moves
-        for (const end of possibleEndings) {
-          const moves = countMoves(str, end);
+        for (let end of possibleEndings) {
+          let moves = countMoves(str, end);
           if (moves !== -1) {
             minMoves = Math.min(minMoves, moves);
           }
@@ -1446,61 +1584,7 @@
         return minMoves === Infinity ? -1 : minMoves;
       }
 
-      
-
-      function solve(n) {
-        let str = n.toString()
-
-        function countMoves(str, end) {
-          let curr = str
-          let moves = 0
-
-          let lastDigit = end[1]
-          let lastIndex = curr.lastIndexOf(lastDigit)
-          if(lastIndex === -1) return -1
-          moves = curr.length - 1 - lastIndex
-          curr = curr.slice(0, lastIndex) + curr.slice(lastIndex+1)
-
-          let firstDigit = end[0]
-          let firstIndex = curr.lastIndexOf(firstDigit)
-          if(firstDigit === -1) return -1
-          moves += curr.length - 1 - firstIndex
-
-          function unleadingZeros(s) {
-            for(let i = 0; i < s.length; i++) {
-              if(s !== -1) return i
-
-              return Infinity
-            }
-          }
-
-          moves += unleadingZeros(curr)
-
-          return moves
-        }
-
-        if(n % 25 === 0) return 0
-
-        let possibleEndings = ['00', '25', '50', '75']
-
-        let minMoves = Infinity
-
-        for(let end of possibleEndings) {
-          let moves = countMoves(str, end) 
-          if(moves !== -1) {
-            minMoves = Math.min(minMoves, moves)
-          }
-        }
-
-        return minMoves === -1 ? Infinity : minMoves
-      }
-
-
-
       console.log(solve(521));
-
-
-      
     </script>
   </body>
 </html>
